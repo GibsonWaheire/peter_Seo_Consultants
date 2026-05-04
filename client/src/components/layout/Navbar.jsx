@@ -7,34 +7,34 @@ const serviceGroups = [
   {
     category: 'SEO Services',
     items: [
-      { title: 'Technical SEO', desc: 'Fix crawl issues, speed & Core Web Vitals' },
-      { title: 'On-Page SEO', desc: 'Optimize content, titles & meta structure' },
-      { title: 'Local SEO', desc: 'Dominate Google Maps & local search' },
-      { title: 'E-Commerce SEO', desc: 'Drive product traffic and increase sales' },
-      { title: 'Link Building', desc: 'Build authority with quality backlinks' },
-      { title: 'Enterprise SEO', desc: 'Scalable strategies for large websites' },
+      { title: 'Technical SEO', desc: 'Fix crawl issues, speed & Core Web Vitals', to: '/services/technical-seo' },
+      { title: 'On-Page SEO', desc: 'Optimize content, titles & meta structure', to: '/services/on-page-seo' },
+      { title: 'Local SEO', desc: 'Dominate Google Maps & local search', to: '/services/local-seo' },
+      { title: 'E-Commerce SEO', desc: 'Drive product traffic and increase sales', to: '/services/ecommerce-seo' },
+      { title: 'Link Building', desc: 'Build authority with quality backlinks', to: '/services/link-building' },
+      { title: 'Enterprise SEO', desc: 'Scalable strategies for large websites', to: '/services/enterprise-seo' },
     ],
   },
   {
     category: 'Paid & Social Media',
     items: [
-      { title: 'PPC / Google Ads', desc: 'Targeted paid ads that maximize ROI' },
-      { title: 'Facebook & Instagram Ads', desc: 'Social campaigns engineered to convert' },
-      { title: 'Email Marketing', desc: 'Nurture leads with smart automation' },
-      { title: 'SMS Marketing', desc: 'Reach customers instantly on mobile' },
-      { title: 'Content Marketing', desc: 'Authority content that ranks and converts' },
-      { title: 'Conversion Rate Optimization', desc: 'Turn more visitors into paying customers' },
+      { title: 'PPC / Google Ads', desc: 'Targeted paid ads that maximize ROI', to: '/services/ppc-google-ads' },
+      { title: 'Facebook & Instagram Ads', desc: 'Social campaigns engineered to convert', to: '/services/facebook-instagram-ads' },
+      { title: 'Email Marketing', desc: 'Nurture leads with smart automation', to: '/services/email-marketing' },
+      { title: 'SMS Marketing', desc: 'Reach customers instantly on mobile', to: '/services/sms-marketing' },
+      { title: 'Content Marketing', desc: 'Authority content that ranks and converts', to: '/services/content-marketing' },
+      { title: 'Conversion Rate Optimization', desc: 'Turn more visitors into paying customers', to: '/services/conversion-rate-optimization' },
     ],
   },
   {
     category: 'Web & Development',
     items: [
-      { title: 'Website Design', desc: 'Beautiful, conversion-focused websites' },
-      { title: 'Web Development', desc: 'Custom builds on modern frameworks' },
-      { title: 'E-Commerce Development', desc: 'Shopify, WooCommerce & custom stores' },
-      { title: 'Mobile App Development', desc: 'iOS and Android apps built to scale' },
-      { title: 'Custom Web Applications', desc: 'Bespoke tools to automate your business' },
-      { title: 'API & System Integrations', desc: 'Connect your CRM, ERP & third-party tools' },
+      { title: 'Website Design', desc: 'Beautiful, conversion-focused websites', to: '/services/website-design' },
+      { title: 'Web Development', desc: 'Custom builds on modern frameworks', to: '/services/web-development' },
+      { title: 'E-Commerce Development', desc: 'Shopify, WooCommerce & custom stores', to: '/services/ecommerce-development' },
+      { title: 'Mobile App Development', desc: 'iOS and Android apps built to scale', to: '/services/mobile-app-development' },
+      { title: 'Custom Web Applications', desc: 'Bespoke tools to automate your business', to: '/services/custom-web-applications' },
+      { title: 'API & System Integrations', desc: 'Connect your CRM, ERP & third-party tools', to: '/services/api-system-integrations' },
     ],
   },
 ];
@@ -168,10 +168,10 @@ export default function Navbar() {
                             <p className="px-5 pb-2 text-[10px] font-black text-[#1a5fa8] uppercase tracking-widest border-b border-slate-100 mb-2">
                               {category}
                             </p>
-                            {items.map(({ title, desc }) => (
+                            {items.map(({ title, desc, to: itemTo }) => (
                               <Link
                                 key={title}
-                                to="/services"
+                                to={itemTo}
                                 className="block px-5 py-2.5 hover:bg-[#f0f4f8] group/item transition-colors"
                               >
                                 <p className="text-sm font-semibold text-slate-800 group-hover/item:text-[#1a5fa8] transition-colors leading-none mb-0.5">
