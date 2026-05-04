@@ -52,45 +52,45 @@ const navItems = [
     label: 'Case Studies',
     to: '/case-studies',
     dropdown: [
-      { title: 'E-Commerce Results', desc: 'How we grew an online retailer by +320%' },
-      { title: 'Legal Services', desc: 'Lead generation for law firms in Nairobi' },
-      { title: 'Real Estate', desc: 'Property visibility & organic lead generation' },
-      { title: 'Healthcare', desc: 'Patient acquisition via organic search' },
-      { title: 'Finance & Banking', desc: 'Compliant SEO strategies for financial brands' },
-      { title: 'SaaS & Technology', desc: 'B2B growth through content & technical SEO' },
+      { title: 'E-Commerce Results', desc: 'How we grew an online retailer by +320%', to: '/case-studies#ecommerce' },
+      { title: 'Legal Services', desc: 'Lead generation for law firms in Nairobi', to: '/case-studies#legal' },
+      { title: 'Real Estate', desc: 'Property visibility & organic lead generation', to: '/case-studies#real-estate' },
+      { title: 'Healthcare', desc: 'Patient acquisition via organic search', to: '/case-studies#healthcare' },
+      { title: 'Finance & Banking', desc: 'Compliant SEO strategies for financial brands', to: '/case-studies#finance' },
+      { title: 'SaaS & Technology', desc: 'B2B growth through content & technical SEO', to: '/case-studies#saas' },
     ],
   },
   {
     label: 'Pricing',
     to: '/pricing',
     dropdown: [
-      { title: 'SEO Starter', desc: 'Perfect for small businesses & startups' },
-      { title: 'SEO Growth', desc: 'For scaling companies with serious ambition' },
-      { title: 'SEO Enterprise', desc: 'High-volume strategies for large websites' },
-      { title: 'PPC Management', desc: 'Paid ads management, fully managed for you' },
-      { title: 'Web Design Packages', desc: 'Sites built to convert visitors into clients' },
-      { title: 'Custom Strategy', desc: 'Bespoke pricing for unique business needs' },
+      { title: 'SEO Starter', desc: 'Perfect for small businesses & startups', to: '/pricing#seo-starter' },
+      { title: 'SEO Growth', desc: 'For scaling companies with serious ambition', to: '/pricing#seo-growth' },
+      { title: 'SEO Enterprise', desc: 'High-volume strategies for large websites', to: '/pricing#seo-enterprise' },
+      { title: 'PPC Management', desc: 'Paid ads management, fully managed for you', to: '/pricing#ppc-management' },
+      { title: 'Web Design Packages', desc: 'Sites built to convert visitors into clients', to: '/pricing#web-design' },
+      { title: 'Custom Strategy', desc: 'Bespoke pricing for unique business needs', to: '/pricing#custom-strategy' },
     ],
   },
   {
     label: 'Reviews',
     to: '/reviews',
     dropdown: [
-      { title: 'Google Reviews', desc: '4.8★ from 230+ verified clients' },
-      { title: 'Facebook Reviews', desc: '4.8★ from 90+ satisfied customers' },
-      { title: 'Clutch Reviews', desc: 'B2B verified client feedback & scores' },
-      { title: 'Video Testimonials', desc: 'Watch clients share their real results' },
-      { title: 'Case Study Results', desc: 'Data-backed proof of our performance' },
+      { title: 'Google Reviews', desc: '4.8★ from 230+ verified clients', to: '/reviews#google' },
+      { title: 'Facebook Reviews', desc: '4.8★ from 90+ satisfied customers', to: '/reviews#facebook' },
+      { title: 'Clutch Reviews', desc: 'B2B verified client feedback & scores', to: '/reviews#clutch' },
+      { title: 'Video Testimonials', desc: 'Watch clients share their real results', to: '/reviews#video' },
+      { title: 'Case Study Results', desc: 'Data-backed proof of our performance', to: '/reviews#case-studies' },
     ],
   },
   {
     label: 'Contact Us',
     to: '/booking',
     dropdown: [
-      { title: 'Book a Strategy Call', desc: 'Free 30-minute consultation with an expert' },
-      { title: 'Get a Free Proposal', desc: 'Custom SEO roadmap for your website' },
-      { title: 'Send Us a Message', desc: 'We respond within 24 hours, guaranteed' },
-      { title: 'Our Nairobi Office', desc: 'Visit us at our Kenya headquarters' },
+      { title: 'Book a Strategy Call', desc: 'Free 30-minute consultation with an expert', to: '/booking' },
+      { title: 'Get a Free Proposal', desc: 'Custom SEO roadmap for your website', to: '/booking' },
+      { title: 'Send Us a Message', desc: 'We respond within 24 hours, guaranteed', to: '/booking' },
+      { title: 'Our Nairobi Office', desc: 'Visit us at our Kenya headquarters', to: '/booking' },
     ],
   },
 ];
@@ -194,10 +194,10 @@ export default function Navbar() {
                       <div className="bg-[#0d3d6e] px-5 py-2.5">
                         <p className="text-white text-[10px] font-black uppercase tracking-widest">{label}</p>
                       </div>
-                      {dropdown.map(({ title, desc }) => (
+                      {dropdown.map(({ title, desc, to: itemTo }) => (
                         <Link
                           key={title}
-                          to={to}
+                          to={itemTo}
                           className="block px-5 py-3 hover:bg-[#f0f4f8] group/item border-b border-slate-50 last:border-0 transition-colors"
                         >
                           <p className="text-sm font-semibold text-slate-800 group-hover/item:text-[#1a5fa8] transition-colors leading-none mb-0.5">
