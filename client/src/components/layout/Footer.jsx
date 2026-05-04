@@ -17,13 +17,13 @@ const serviceLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400 border-t border-slate-800">
+    <footer className="bg-black text-slate-400 border-t border-slate-800">
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Brand */}
         <div className="lg:col-span-1">
           <div className="flex items-center gap-2 text-white font-bold text-lg mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-white inline-block" />
             Peter SEO
           </div>
           <p className="text-sm leading-relaxed mb-6">
@@ -33,7 +33,7 @@ export default function Footer() {
             {['LinkedIn', 'Twitter', 'Facebook'].map((s) => (
               <span
                 key={s}
-                className="text-xs border border-slate-700 hover:border-emerald-500 hover:text-emerald-400 px-3 py-1.5 rounded-md cursor-pointer transition-colors"
+                className="text-xs border border-slate-700 hover:border-white hover:text-white px-3 py-1.5 rounded-md cursor-pointer transition-colors"
               >
                 {s}
               </span>
@@ -47,10 +47,7 @@ export default function Footer() {
           <ul className="space-y-3">
             {quickLinks.map(({ label, to }) => (
               <li key={to}>
-                <Link
-                  to={to}
-                  className="text-sm hover:text-emerald-400 transition-colors"
-                >
+                <Link to={to} className="text-sm hover:text-white transition-colors">
                   {label}
                 </Link>
               </li>
@@ -78,7 +75,7 @@ export default function Footer() {
           </ul>
           <Link
             to="/booking"
-            className="inline-block mt-6 bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-semibold px-5 py-2.5 rounded-lg transition-colors"
+            className="inline-block mt-6 bg-white hover:bg-slate-100 text-black text-xs font-semibold px-5 py-2.5 rounded-lg transition-colors"
           >
             Book a Free Call
           </Link>

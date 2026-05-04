@@ -6,8 +6,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 text-slate-900 font-bold text-lg tracking-tight">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />
+        <Link to="/" className="flex items-center gap-2 text-black font-bold text-lg tracking-tight">
+          <span className="w-2.5 h-2.5 rounded-full bg-black inline-block" />
           Peter SEO
         </Link>
 
@@ -24,7 +24,7 @@ export default function Navbar() {
               end={to === '/'}
               className={({ isActive }) =>
                 `text-sm font-medium transition-colors ${
-                  isActive ? 'text-emerald-600' : 'text-slate-600 hover:text-slate-900'
+                  isActive ? 'text-black' : 'text-slate-500 hover:text-black'
                 }`
               }
             >
@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* CTA */}
         <Link
           to="/booking"
-          className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+          className="bg-black hover:bg-slate-800 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
         >
           Get Started
         </Link>
