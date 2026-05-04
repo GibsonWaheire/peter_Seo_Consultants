@@ -22,7 +22,7 @@ const navItems = [
     dropdown: ['Client Reviews', 'Video Testimonials'],
   },
   {
-    label: 'Contact',
+    label: 'Contact Us',
     to: '/booking',
     dropdown: null,
   },
@@ -32,45 +32,57 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
 
-      {/* ── Announcement Bar ── */}
-      <div className="bg-black h-9 flex items-center justify-center px-4">
-        <p className="text-white text-xs font-bold uppercase tracking-widest text-center">
-          #1 SEO Consultants in Kenya
-        </p>
+      {/* ── Top bar ── */}
+      <div className="bg-[#1a5fa8] h-9 flex items-center px-6">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+          <span className="text-white text-xs font-semibold hidden sm:block">
+            📊 800+ Client Case Studies — Proving Our Results
+          </span>
+          <div className="flex items-center gap-6 ml-auto">
+            <span className="hidden md:flex items-center gap-1.5 text-white text-xs font-medium">
+              📞 +254 712 000 000
+            </span>
+            <Link
+              to="/booking"
+              className="text-white text-xs font-black uppercase tracking-widest hover:text-yellow-300 transition-colors"
+            >
+              Get a Free Proposal
+            </Link>
+          </div>
+        </div>
       </div>
 
-      {/* ── Navbar ── */}
+      {/* ── Main navbar ── */}
       <nav className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between">
 
           {/* Logo */}
           <Link
             to="/"
-            className="shrink-0 border-2 border-blue-600 px-3 py-1.5 text-black font-black text-base tracking-widest uppercase hover:bg-blue-600 hover:text-white transition-colors"
+            className="shrink-0 border-2 border-[#0d3d6e] px-3 py-1.5 text-[#0d3d6e] font-black text-base tracking-widest uppercase hover:bg-[#0d3d6e] hover:text-white transition-colors"
           >
             Peter SEO
           </Link>
 
-          {/* Nav Links with dropdowns */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Nav with dropdowns */}
+          <div className="hidden lg:flex items-center">
             {navItems.map(({ label, to, dropdown }) => (
               <div key={label} className="group relative">
                 <Link
                   to={to}
-                  className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-slate-700 hover:text-black transition-colors"
+                  className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-slate-700 hover:text-[#1a5fa8] transition-colors whitespace-nowrap"
                 >
                   {label}
-                  {dropdown && <span className="text-[10px] mt-px text-slate-400">▾</span>}
+                  {dropdown && <span className="text-[10px] text-slate-400 ml-0.5">▾</span>}
                 </Link>
-
                 {dropdown && (
-                  <div className="absolute hidden group-hover:block top-full left-0 pt-1 z-50 min-w-[200px]">
+                  <div className="absolute hidden group-hover:block top-full left-0 pt-1 z-50 min-w-[210px]">
                     <div className="bg-white border border-slate-200 shadow-xl py-2">
                       {dropdown.map((item) => (
                         <Link
                           key={item}
                           to={to}
-                          className="block px-5 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-black transition-colors"
+                          className="block px-5 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1a5fa8] transition-colors"
                         >
                           {item}
                         </Link>
@@ -85,7 +97,7 @@ export default function Navbar() {
           {/* Client Login */}
           <Link
             to="/login"
-            className="hidden md:inline-block text-blue-600 hover:text-blue-800 text-sm font-bold uppercase tracking-widest transition-colors shrink-0"
+            className="hidden lg:inline-block text-[#1a5fa8] hover:text-[#0d3d6e] text-sm font-black uppercase tracking-widest transition-colors shrink-0"
           >
             Client Login
           </Link>

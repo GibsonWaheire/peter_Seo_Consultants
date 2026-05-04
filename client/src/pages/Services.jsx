@@ -48,7 +48,7 @@ const steps = [
 
 export default function Services() {
   return (
-    <main className="pt-[68px] bg-white">
+    <main className="pt-[104px] bg-white">
 
       {/* Hero */}
       <section className="bg-white text-black py-24 px-6 border-b border-slate-100">

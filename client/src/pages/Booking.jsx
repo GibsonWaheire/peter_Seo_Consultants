@@ -23,7 +23,7 @@ export default function Booking() {
   }
 
   return (
-    <main className="pt-[68px] bg-white min-h-screen">
+    <main className="pt-[104px] bg-white min-h-screen">
 
       {/* Hero */}
       <section className="bg-white text-black py-20 px-6 border-b border-slate-100">
