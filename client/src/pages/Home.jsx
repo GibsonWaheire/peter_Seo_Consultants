@@ -1,163 +1,195 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const services = [
-  {
-    icon: '🔍',
-    title: 'SEO Audit',
-    desc: "A comprehensive review of your site's technical health, on-page factors, and competitive gaps.",
-  },
-  {
-    icon: '📝',
-    title: 'On-Page SEO',
-    desc: 'Optimized content, meta tags, and internal linking that signal relevance to search engines.',
-  },
-  {
-    icon: '🔗',
-    title: 'Link Building',
-    desc: 'High-authority backlinks that build domain trust and push your pages to the top of search results.',
-  },
+const stats = [
+  { num: '$2.3B', label: 'Revenue Generated for Clients' },
+  { num: '+200%', label: 'Average Organic Traffic Increase' },
+  { num: '1,000+', label: 'Clients Worldwide' },
+  { num: '97%', label: 'Client Retention Rate' },
 ];
 
+const services = [
+  { icon: '🔍', title: 'SEO Audit', desc: 'Uncover every technical gap holding your site back.' },
+  { icon: '📝', title: 'On-Page SEO', desc: 'Content and structure optimized for search and users.' },
+  { icon: '🔗', title: 'Link Building', desc: 'Authority backlinks that move the needle on rankings.' },
+  { icon: '⚙️', title: 'Technical SEO', desc: 'Speed, crawlability, and indexation done right.' },
+  { icon: '📍', title: 'Local SEO', desc: 'Dominate Google Maps and local search results.' },
+  { icon: '✍️', title: 'Content Strategy', desc: 'Topic authority that drives compounding organic growth.' },
+];
+
+const caseStudy = {
+  client: 'E-Commerce Retailer',
+  industry: 'Fashion & Apparel',
+  result: 'Grew organic revenue from $1.2M to $4.8M in 18 months.',
+  stat: '+300%',
+  label: 'Organic Revenue',
+};
+
+const socialProof = ['Forbes', 'Clutch', 'Inc. 5000', 'Google Partner', 'Shopify Plus'];
+
 export default function Home() {
+  const [email, setEmail] = useState('');
+
   return (
-    <main className="pt-16 bg-white">
+    <main className="pt-[68px] bg-white">
 
       {/* ── Hero ── */}
-      <section
-        className="relative bg-slate-50 text-black min-h-screen flex items-center px-6 border-b border-slate-200 overflow-hidden"
-        style={{
-          backgroundImage: 'radial-gradient(circle, #cbd5e1 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
-        }}
-      >
-        <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-24">
+      <section className="bg-white px-6 py-24 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left — copy */}
+          {/* Left */}
           <div>
-            <span className="inline-block text-slate-500 text-xs font-bold uppercase tracking-widest mb-5">
-              SEO Consultants
-            </span>
-            <h1 className="text-6xl md:text-8xl font-black leading-none tracking-tight mb-6 text-black">
-              Rank Higher.{' '}
-              <span className="text-slate-400">Grow Faster.</span>
+            <p className="text-emerald-600 text-sm font-semibold uppercase tracking-widest mb-4">
+              Award-Winning SEO Agency
+            </p>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-black leading-[1.05] tracking-tight mb-6">
+              We Grow Your<br />
+              Business{' '}
+              <span className="text-emerald-600">Online.</span>
             </h1>
             <p className="text-slate-500 text-lg leading-relaxed max-w-lg mb-10">
-              Data-driven SEO strategies that deliver real, measurable results for your business.
-              We turn search intent into sustainable organic growth.
+              Data-driven SEO strategies that deliver measurable results. More traffic, more leads, more revenue — guaranteed.
             </p>
-            <div className="flex gap-4 flex-wrap">
-              <Link
-                to="/booking"
-                className="bg-black hover:bg-slate-800 text-white font-semibold px-7 py-3.5 rounded-lg transition-colors"
-              >
-                Book a Call
-              </Link>
-              <Link
-                to="/services"
-                className="border border-slate-300 hover:border-black text-slate-700 hover:text-black font-semibold px-7 py-3.5 rounded-lg transition-colors"
-              >
-                Our Services
-              </Link>
-            </div>
+            <Link
+              to="/booking"
+              className="inline-block bg-black hover:bg-zinc-800 text-white font-bold text-base px-8 py-4 transition-colors"
+            >
+              Get a Free Proposal
+            </Link>
           </div>
 
-          {/* Right — abstract visual */}
-          <div className="relative bg-slate-50 rounded-3xl border border-slate-200 p-8 overflow-hidden">
-            {/* Dot grid decoration */}
-            <div className="absolute inset-0 opacity-30"
-              style={{
-                backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
-                backgroundSize: '20px 20px',
-              }}
-            />
-
-            {/* Bar chart */}
-            <div className="relative z-10">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
-                Organic Traffic Growth
-              </p>
-              <div className="flex items-end gap-2 h-40 mb-6">
-                {[28, 42, 35, 55, 48, 70, 62, 88, 75, 100].map((h, i) => (
-                  <div
-                    key={i}
-                    className={`flex-1 rounded-t-md transition-all ${
-                      i === 9 ? 'bg-black' : i >= 6 ? 'bg-slate-400' : 'bg-slate-200'
-                    }`}
-                    style={{ height: `${h}%` }}
-                  />
-                ))}
-              </div>
-              <div className="flex items-end justify-between border-t border-slate-200 pt-5">
-                <div>
-                  <p className="text-4xl font-black text-black">+143%</p>
-                  <p className="text-slate-400 text-xs mt-1">avg. traffic increase</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-2xl font-black text-black">2,400+</p>
-                  <p className="text-slate-400 text-xs mt-1">keywords ranked</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Corner badge */}
-            <div className="absolute top-6 right-6 w-10 h-10 rounded-full border-2 border-black opacity-20" />
+          {/* Right — image placeholder */}
+          <div className="bg-slate-100 rounded-xl h-96 w-full flex items-center justify-center">
+            <p className="text-slate-400 text-sm font-medium tracking-wide">Dashboard / Results Screenshot</p>
           </div>
         </div>
       </section>
 
-      {/* ── Stats ── */}
-      <section className="bg-black text-white py-16 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-          {[
-            { num: '200+', label: 'Clients' },
-            { num: '5 Yrs', label: 'Experience' },
-            { num: '98%', label: 'Retention' },
-          ].map(({ num, label }) => (
-            <div key={label}>
-              <p className="text-5xl font-black">{num}</p>
-              <p className="mt-2 text-slate-400 text-sm font-semibold uppercase tracking-widest">{label}</p>
-            </div>
+      {/* ── Social Proof Bar ── */}
+      <section className="bg-slate-100 border-y border-slate-200 py-5 px-6">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+          <span className="text-slate-400 text-xs font-semibold uppercase tracking-widest">As Seen On</span>
+          {socialProof.map((name) => (
+            <span key={name} className="text-slate-500 text-sm font-bold tracking-wide">{name}</span>
           ))}
         </div>
       </section>
 
-      {/* ── Services ── */}
-      <section className="bg-white py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-black text-black text-center mb-4">What We Do</h2>
-          <p className="text-slate-500 text-center max-w-xl mx-auto mb-16">
-            End-to-end SEO services designed to increase visibility, drive traffic, and grow revenue.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {services.map(({ icon, title, desc }) => (
-              <div key={title} className="rounded-2xl p-10 shadow-md hover:shadow-xl transition-shadow bg-white border border-slate-100">
-                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 text-2xl mb-6">
-                  {icon}
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3">{title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+      {/* ── Results ── */}
+      <section className="bg-zinc-900 text-white py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-14">
+            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+              We Get <span className="text-emerald-600">Results.</span>
+            </h2>
+            <p className="text-slate-400 text-lg mt-3 max-w-xl">
+              Real numbers. Real clients. Proven SEO performance across every industry.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-zinc-700">
+            {stats.map(({ num, label }) => (
+              <div key={label} className="bg-zinc-900 p-10">
+                <p className="text-5xl font-black text-emerald-600 mb-3">{num}</p>
+                <p className="text-slate-300 text-sm leading-snug">{label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="bg-black text-white py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <span className="inline-block text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">
-            Let's Work Together
-          </span>
-          <h2 className="text-5xl font-black mb-4">Ready to Rank?</h2>
-          <p className="text-slate-400 text-lg max-w-xl mb-10">
-            Let's build an SEO strategy tailored to your goals — and turn your website into your top-performing sales channel.
+      {/* ── Services Grid ── */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-4xl font-black text-black mb-3">Our Services</h2>
+            <p className="text-slate-500 text-lg max-w-xl">
+              Full-service SEO solutions built to increase your visibility and grow revenue.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-200">
+            {services.map(({ icon, title, desc }) => (
+              <div
+                key={title}
+                className="group border-b border-r border-slate-200 p-8 cursor-pointer transition-colors hover:bg-slate-50"
+              >
+                <span className="text-2xl block mb-4">{icon}</span>
+                <h3 className="text-base font-bold text-black mb-1 group-hover:text-emerald-600 transition-colors">
+                  {title}
+                </h3>
+                <div className="w-0 group-hover:w-8 h-0.5 bg-emerald-600 mb-3 transition-all duration-300" />
+                <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link
+              to="/services"
+              className="text-sm font-semibold text-black hover:text-emerald-600 transition-colors inline-flex items-center gap-2"
+            >
+              View All Services <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Case Study ── */}
+      <section className="bg-zinc-900 text-white py-20 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-emerald-600 text-xs font-bold uppercase tracking-widest mb-4">
+              Featured Case Study
+            </p>
+            <p className="text-slate-400 text-sm font-semibold uppercase tracking-widest mb-2">
+              {caseStudy.client} · {caseStudy.industry}
+            </p>
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight mb-6">
+              {caseStudy.result}
+            </h2>
+            <Link
+              to="/case-studies"
+              className="inline-flex items-center gap-2 text-white text-sm font-semibold border-b border-white hover:border-emerald-600 hover:text-emerald-600 pb-0.5 transition-colors"
+            >
+              View Case Study <span>→</span>
+            </Link>
+          </div>
+          <div className="text-center lg:text-right">
+            <p className="text-8xl md:text-9xl font-black text-emerald-600 leading-none">
+              {caseStudy.stat}
+            </p>
+            <p className="text-slate-400 text-base font-semibold mt-2">{caseStudy.label}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA Band ── */}
+      <section className="bg-black text-white py-20 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
+            Ready to <span className="text-emerald-600">Dominate</span> Search?
+          </h2>
+          <p className="text-slate-400 text-lg mb-10">
+            Enter your email and we&apos;ll send you a free SEO audit of your website.
           </p>
-          <Link
-            to="/booking"
-            className="inline-block bg-white hover:bg-slate-100 text-black font-semibold text-base px-10 py-4 rounded-lg transition-colors"
+          <form
+            className="flex flex-col sm:flex-row gap-0 max-w-lg mx-auto"
+            onSubmit={(e) => e.preventDefault()}
           >
-            Get Started Today
-          </Link>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your work email"
+              required
+              className="flex-1 bg-zinc-900 border border-zinc-700 text-white placeholder-zinc-500 px-5 py-4 text-sm focus:outline-none focus:border-emerald-600 transition-colors"
+            />
+            <button
+              type="submit"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-7 py-4 transition-colors shrink-0"
+            >
+              Get Free Audit
+            </button>
+          </form>
+          <p className="text-zinc-600 text-xs mt-4">No spam. Unsubscribe at any time.</p>
         </div>
       </section>
 
