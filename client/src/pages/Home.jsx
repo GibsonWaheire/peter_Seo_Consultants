@@ -1,11 +1,5 @@
 import { Link } from 'react-router-dom';
 
-const metrics = [
-  { label: 'Domain Authority', value: '87', suffix: '' },
-  { label: 'Organic Traffic', value: '+143', suffix: '%' },
-  { label: 'Keywords Ranked', value: '2,400', suffix: '+' },
-];
-
 const services = [
   {
     icon: '🔍',
@@ -29,8 +23,14 @@ export default function Home() {
     <main className="pt-16 bg-white">
 
       {/* ── Hero ── */}
-      <section className="bg-white text-black min-h-screen flex items-center px-6 border-b border-slate-100">
-        <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-24">
+      <section
+        className="relative bg-slate-50 text-black min-h-screen flex items-center px-6 border-b border-slate-200 overflow-hidden"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #cbd5e1 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      >
+        <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-24">
 
           {/* Left — copy */}
           <div>
@@ -61,26 +61,46 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — metrics card */}
-          <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm">
-            <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-6">
-              Live Client Results
-            </p>
-            <div className="space-y-6">
-              {metrics.map(({ label, value, suffix }) => (
-                <div key={label} className="flex items-end justify-between border-b border-slate-200 pb-6 last:border-0 last:pb-0">
-                  <span className="text-slate-500 text-sm">{label}</span>
-                  <span className="text-3xl font-black text-black tabular-nums">
-                    {value}
-                    <span className="text-slate-400">{suffix}</span>
-                  </span>
+          {/* Right — abstract visual */}
+          <div className="relative bg-slate-50 rounded-3xl border border-slate-200 p-8 overflow-hidden">
+            {/* Dot grid decoration */}
+            <div className="absolute inset-0 opacity-30"
+              style={{
+                backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
+                backgroundSize: '20px 20px',
+              }}
+            />
+
+            {/* Bar chart */}
+            <div className="relative z-10">
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
+                Organic Traffic Growth
+              </p>
+              <div className="flex items-end gap-2 h-40 mb-6">
+                {[28, 42, 35, 55, 48, 70, 62, 88, 75, 100].map((h, i) => (
+                  <div
+                    key={i}
+                    className={`flex-1 rounded-t-md transition-all ${
+                      i === 9 ? 'bg-black' : i >= 6 ? 'bg-slate-400' : 'bg-slate-200'
+                    }`}
+                    style={{ height: `${h}%` }}
+                  />
+                ))}
+              </div>
+              <div className="flex items-end justify-between border-t border-slate-200 pt-5">
+                <div>
+                  <p className="text-4xl font-black text-black">+143%</p>
+                  <p className="text-slate-400 text-xs mt-1">avg. traffic increase</p>
                 </div>
-              ))}
+                <div className="text-right">
+                  <p className="text-2xl font-black text-black">2,400+</p>
+                  <p className="text-slate-400 text-xs mt-1">keywords ranked</p>
+                </div>
+              </div>
             </div>
-            <div className="mt-8 flex items-center gap-2 text-slate-400 text-xs">
-              <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
-              Updated in real-time
-            </div>
+
+            {/* Corner badge */}
+            <div className="absolute top-6 right-6 w-10 h-10 rounded-full border-2 border-black opacity-20" />
           </div>
         </div>
       </section>
