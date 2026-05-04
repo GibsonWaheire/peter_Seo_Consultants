@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const heroStats = [
+  { num: '19,478,369', label: 'Keywords Ranked' },
+  { num: '5,621,177', label: 'Leads Generated' },
+  { num: '800+', label: 'Client Case Studies', link: '/case-studies' },
+];
+
 const stats = [
   { num: '$2.3B', label: 'Revenue Generated for Clients' },
   { num: '+200%', label: 'Average Organic Traffic Increase' },
@@ -31,37 +37,63 @@ export default function Home() {
   const [email, setEmail] = useState('');
 
   return (
-    <main className="pt-[68px] bg-white">
+    <main className="pt-[104px] bg-white">
 
       {/* ── Hero ── */}
-      <section className="bg-white px-6 py-24 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="relative min-h-screen bg-slate-700 bg-cover bg-center">
+        {/* Blue overlay */}
+        <div className="absolute inset-0 bg-blue-900/70" />
 
-          {/* Left */}
-          <div>
-            <p className="text-emerald-600 text-sm font-semibold uppercase tracking-widest mb-4">
-              Award-Winning SEO Agency
-            </p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-black leading-[1.05] tracking-tight mb-6">
-              We Grow Your<br />
-              Business{' '}
-              <span className="text-emerald-600">Online.</span>
-            </h1>
-            <p className="text-slate-500 text-lg leading-relaxed max-w-lg mb-10">
-              Data-driven SEO strategies that deliver measurable results. More traffic, more leads, more revenue — guaranteed.
-            </p>
-            <Link
-              to="/booking"
-              className="inline-block bg-black hover:bg-zinc-800 text-white font-bold text-base px-8 py-4 transition-colors"
-            >
-              Get a Free Proposal
-            </Link>
+        {/* Content */}
+        <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 py-24 text-center">
+
+          {/* Headline */}
+          <h1 className="text-6xl md:text-7xl font-black text-white uppercase tracking-tight leading-none mb-5">
+            Need More Clients?
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-xl md:text-2xl font-light text-white uppercase tracking-widest mb-14">
+            Meet Your New SEO Agency
+          </p>
+
+          {/* Stat Boxes */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-4xl mb-12">
+            {heroStats.map(({ num, label, link }) => {
+              const inner = (
+                <>
+                  <p className="text-3xl md:text-4xl font-black text-white leading-none mb-2">{num}</p>
+                  <p className="text-yellow-300 uppercase text-xs md:text-sm tracking-widest font-semibold">
+                    {label}{link ? ' →' : ''}
+                  </p>
+                </>
+              );
+              return link ? (
+                <Link
+                  key={label}
+                  to={link}
+                  className="bg-blue-900/80 border border-blue-700/50 px-6 py-8 flex flex-col items-center justify-center hover:bg-blue-800/80 transition-colors"
+                >
+                  {inner}
+                </Link>
+              ) : (
+                <div
+                  key={label}
+                  className="bg-blue-900/80 border border-blue-700/50 px-6 py-8 flex flex-col items-center justify-center"
+                >
+                  {inner}
+                </div>
+              );
+            })}
           </div>
 
-          {/* Right — image placeholder */}
-          <div className="bg-slate-100 rounded-xl h-96 w-full flex items-center justify-center">
-            <p className="text-slate-400 text-sm font-medium tracking-wide">Dashboard / Results Screenshot</p>
-          </div>
+          {/* CTA Button */}
+          <Link
+            to="/booking"
+            className="bg-lime-400 hover:bg-lime-300 text-black font-black text-sm md:text-base px-12 py-5 rounded-full uppercase tracking-widest transition-colors"
+          >
+            Get a Free Strategy Review
+          </Link>
         </div>
       </section>
 
