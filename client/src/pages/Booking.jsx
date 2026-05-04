@@ -7,7 +7,7 @@ const trustPoints = [
 ];
 
 const inputClass =
-  'w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition bg-white';
+  'w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition bg-white';
 
 export default function Booking() {
   const [form, setForm] = useState({ name: '', email: '', website: '', service: '', budget: '', message: '' });
@@ -23,17 +23,17 @@ export default function Booking() {
   }
 
   return (
-    <main className="pt-16 bg-white min-h-screen">
+    <main className="pt-[68px] bg-white min-h-screen">
 
       {/* Hero */}
       <section className="bg-white text-black py-20 px-6 border-b border-slate-100">
         <div className="max-w-6xl mx-auto">
-          <span className="inline-block text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">
+          <span className="inline-block text-emerald-600 text-xs font-bold uppercase tracking-widest mb-4">
             Book a Call
           </span>
           <h1 className="text-5xl md:text-6xl font-black mb-4 leading-tight text-black">
             Let&apos;s Talk About<br />
-            <span className="text-slate-400">Your Growth</span>
+            <span className="text-emerald-600">Your Growth</span>
           </h1>
           <p className="text-slate-500 text-lg max-w-lg">
             Fill out the form below and we&apos;ll get back to you within 24 hours to schedule your free strategy call.
@@ -65,7 +65,7 @@ export default function Booking() {
 
             {/* Social proof */}
             <div className="mt-12 p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
-              <div className="flex gap-1 text-black mb-3">
+              <div className="flex gap-1 text-emerald-600 mb-3">
                 {Array(5).fill('★').map((s, i) => <span key={i} className="text-lg">{s}</span>)}
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic mb-4">
@@ -79,7 +79,7 @@ export default function Booking() {
           <div className="lg:col-span-3">
             {submitted ? (
               <div className="bg-white rounded-2xl shadow-md p-12 text-center border border-slate-100 h-full flex flex-col items-center justify-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
+                <div className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
                 <h3 className="text-2xl font-black text-black mb-3">We&apos;ve Got Your Request!</h3>
                 <p className="text-slate-500 text-sm max-w-sm">
                   Thanks for reaching out. We&apos;ll review your details and get back to you within 24 hours to schedule your call.
@@ -90,13 +90,13 @@ export default function Booking() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wide mb-2">
-                      Full Name <span className="text-black">*</span>
+                      Full Name <span className="text-emerald-600">*</span>
                     </label>
                     <input type="text" name="name" required value={form.name} onChange={handleChange} placeholder="Jane Smith" className={inputClass} />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wide mb-2">
-                      Email <span className="text-black">*</span>
+                      Email <span className="text-emerald-600">*</span>
                     </label>
                     <input type="email" name="email" required value={form.email} onChange={handleChange} placeholder="jane@company.com" className={inputClass} />
                   </div>
@@ -145,7 +145,7 @@ export default function Booking() {
                   />
                 </div>
 
-                <button type="submit" className="w-full bg-black hover:bg-slate-800 text-white font-bold text-base py-4 rounded-lg transition-colors">
+                <button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base py-4 transition-colors">
                   Send My Request
                 </button>
 

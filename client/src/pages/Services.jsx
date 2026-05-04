@@ -48,17 +48,17 @@ const steps = [
 
 export default function Services() {
   return (
-    <main className="pt-16 bg-white">
+    <main className="pt-[68px] bg-white">
 
       {/* Hero */}
       <section className="bg-white text-black py-24 px-6 border-b border-slate-100">
         <div className="max-w-6xl mx-auto">
-          <span className="inline-block text-slate-500 text-xs font-bold uppercase tracking-widest mb-5">
+          <span className="inline-block text-emerald-600 text-xs font-bold uppercase tracking-widest mb-5">
             What We Offer
           </span>
           <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-black">
             SEO Services That<br />
-            <span className="text-slate-400">Actually Work</span>
+            <span className="text-emerald-600">Actually Work</span>
           </h1>
           <p className="text-slate-500 text-lg max-w-xl leading-relaxed">
             Every service is built around one goal: sustainable organic growth that compounds over time.
@@ -80,7 +80,7 @@ export default function Services() {
                 <ul className="space-y-2">
                   {includes.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-slate-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -94,14 +94,14 @@ export default function Services() {
       {/* How It Works */}
       <section className="bg-slate-50 py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <span className="inline-block text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">
+          <span className="inline-block text-emerald-600 text-xs font-bold uppercase tracking-widest mb-4">
             Our Process
           </span>
           <h2 className="text-4xl font-black text-black mb-16">How It Works</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map(({ num, title, desc }) => (
               <div key={num}>
-                <p className="text-5xl font-black text-slate-200 mb-4">{num}</p>
+                <p className="text-5xl font-black text-emerald-200 mb-4">{num}</p>
                 <h3 className="text-lg font-bold text-black mb-2">{title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -122,7 +122,7 @@ export default function Services() {
           </p>
           <Link
             to="/booking"
-            className="inline-block bg-white hover:bg-slate-100 text-black font-semibold text-base px-10 py-4 rounded-lg transition-colors"
+            className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-base px-10 py-4 transition-colors"
           >
             Book a Free Call
           </Link>

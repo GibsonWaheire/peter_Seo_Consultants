@@ -22,9 +22,8 @@ export default function Footer() {
 
         {/* Brand */}
         <div className="lg:col-span-1">
-          <div className="flex items-center gap-2 text-white font-bold text-lg mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-white inline-block" />
-            Peter SEO
+          <div className="text-white font-black text-xl mb-4">
+            Peter<span className="text-emerald-600">SEO</span>
           </div>
           <p className="text-sm leading-relaxed mb-6">
             Data-driven SEO strategies that deliver real, measurable results for businesses that want to grow.
@@ -33,7 +32,7 @@ export default function Footer() {
             {['LinkedIn', 'Twitter', 'Facebook'].map((s) => (
               <span
                 key={s}
-                className="text-xs border border-slate-700 hover:border-white hover:text-white px-3 py-1.5 rounded-md cursor-pointer transition-colors"
+                className="text-xs border border-slate-700 hover:border-emerald-600 hover:text-emerald-600 px-3 py-1.5 rounded-md cursor-pointer transition-colors"
               >
                 {s}
               </span>
@@ -47,7 +46,7 @@ export default function Footer() {
           <ul className="space-y-3">
             {quickLinks.map(({ label, to }) => (
               <li key={to}>
-                <Link to={to} className="text-sm hover:text-white transition-colors">
+                <Link to={to} className="text-sm hover:text-emerald-600 transition-colors">
                   {label}
                 </Link>
               </li>
@@ -75,7 +74,7 @@ export default function Footer() {
           </ul>
           <Link
             to="/booking"
-            className="inline-block mt-6 bg-white hover:bg-slate-100 text-black text-xs font-semibold px-5 py-2.5 rounded-lg transition-colors"
+            className="inline-block mt-6 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-5 py-2.5 transition-colors"
           >
             Book a Free Call
           </Link>
