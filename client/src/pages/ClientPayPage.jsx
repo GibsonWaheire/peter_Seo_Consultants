@@ -361,8 +361,8 @@ export default function ClientPayPage() {
             <label className={labelCls}>
               Amount <span className="text-emerald-600">*</span>
             </label>
-            {/* Quick amounts for small orders */}
-            {!parsedInput && (
+            {/* Quick amounts for small orders — only shown when KES is selected */}
+            {!parsedInput && inputCurrency === 'KES' && (
               <div className="flex flex-wrap gap-2 mb-3">
                 {[1000, 1500, 2000, 3500, 5000].map(amt => (
                   <button
