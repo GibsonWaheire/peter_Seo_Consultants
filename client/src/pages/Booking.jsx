@@ -20,6 +20,17 @@ export default function Booking() {
   function handleSubmit(e) {
     e.preventDefault();
     setSubmitted(true);
+    const msg = [
+      `Hi Peter SEO, I'd like to book a strategy call.`,
+      ``,
+      `*Name:* ${form.name}`,
+      `*Email:* ${form.email}`,
+      form.website ? `*Website:* ${form.website}` : null,
+      form.service ? `*Service:* ${form.service}` : null,
+      form.budget  ? `*Budget:* ${form.budget}` : null,
+      form.message ? `*Message:* ${form.message}` : null,
+    ].filter(Boolean).join('\n');
+    window.open(`https://wa.me/254727957175?text=${encodeURIComponent(msg)}`, '_blank');
   }
 
   return (

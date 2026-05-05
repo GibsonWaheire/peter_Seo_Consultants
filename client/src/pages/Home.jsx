@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 /* ── Data ── */
 
@@ -75,6 +75,7 @@ const chartBars = [28, 38, 32, 50, 44, 62, 56, 78, 86, 100];
 /* ── Component ── */
 
 export default function Home() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', tips: false });
 
   function handleChange(e) {
@@ -450,7 +451,78 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════
-          SECTION 9 — FINAL CTA
+          SECTION 9 — PAY ONLINE
+      ════════════════════════════════════ */}
+      <section className="bg-white py-20 px-6 border-t border-slate-100">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+
+          {/* Left — copy */}
+          <div className="flex-1">
+            <span className="inline-block text-[#1a5fa8] text-xs font-black uppercase tracking-widest mb-4">
+              Secure Online Payment
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 leading-tight">
+              Already Know What You Need?<br />Pay Online in Seconds.
+            </h2>
+            <p className="text-gray-500 text-base leading-relaxed mb-6 max-w-lg">
+              Skip the back-and-forth. Select your service, enter your details, and pay instantly using M-Pesa, card, or Apple Pay — we'll kick off your campaign the same day.
+            </p>
+            {/* Payment method badges */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1 bg-zinc-900 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                Apple Pay
+              </span>
+              <span className="bg-green-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">M-Pesa</span>
+              <span className="bg-blue-700 text-white text-xs font-black px-2.5 py-1 rounded-full tracking-tight">VISA</span>
+              <span className="bg-red-600 text-white text-xs font-black px-2.5 py-1 rounded-full">Mastercard</span>
+              <span className="text-slate-400 text-xs ml-1">· Secured by Paystack</span>
+            </div>
+          </div>
+
+          {/* Right — pay card */}
+          <div className="w-full lg:w-auto lg:min-w-[340px]">
+            <div className="bg-slate-900 rounded-2xl p-8 shadow-2xl">
+              <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-1">Ready to start?</p>
+              <p className="text-white font-black text-xl mb-1">Pay for Your Service</p>
+              <p className="text-slate-400 text-sm mb-7">KES · AED · All major cards</p>
+
+              {/* Quick plan buttons */}
+              <div className="space-y-2.5 mb-6">
+                {[
+                  { label: 'SEO Starter Plan', price: 35000 },
+                  { label: 'SEO Growth Plan',  price: 75000 },
+                ].map(({ label, price }) => (
+                  <button
+                    key={label}
+                    onClick={() => navigate('/pay', { state: { serviceName: label, price, currency: 'KES' } })}
+                    className="w-full flex items-center justify-between bg-white/10 hover:bg-white/20 text-white text-sm font-semibold px-4 py-3 rounded-xl transition-colors"
+                  >
+                    <span>{label}</span>
+                    <span className="text-slate-300 font-mono text-xs">KES {price.toLocaleString()}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Main CTA */}
+              <button
+                onClick={() => navigate('/pay')}
+                className="w-full bg-lime-400 hover:bg-lime-300 text-black font-black py-3.5 rounded-xl transition-colors text-sm uppercase tracking-wider"
+                style={{ backgroundColor: '#c8f000' }}
+              >
+                Pay for Any Service →
+              </button>
+              <p className="text-slate-500 text-xs text-center mt-3">Choose your own service &amp; amount</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════
+          SECTION 10 — FINAL CTA
       ════════════════════════════════════ */}
       <section className="bg-[#0d3d6e] py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">

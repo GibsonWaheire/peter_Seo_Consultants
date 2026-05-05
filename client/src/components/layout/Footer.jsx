@@ -10,14 +10,14 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { label: 'Technical SEO', to: '/services' },
-  { label: 'On-Page SEO', to: '/services' },
-  { label: 'Local SEO', to: '/services' },
-  { label: 'E-Commerce SEO', to: '/services' },
-  { label: 'Link Building', to: '/services' },
-  { label: 'PPC / Google Ads', to: '/services' },
-  { label: 'Web Design', to: '/services' },
-  { label: 'Content Strategy', to: '/services' },
+  { label: 'Technical SEO', to: '/services/technical-seo' },
+  { label: 'On-Page SEO', to: '/services/on-page-seo' },
+  { label: 'Local SEO', to: '/services/local-seo' },
+  { label: 'E-Commerce SEO', to: '/services/ecommerce-seo' },
+  { label: 'Link Building', to: '/services/link-building' },
+  { label: 'PPC / Google Ads', to: '/services/ppc-google-ads' },
+  { label: 'Web Design', to: '/services/website-design' },
+  { label: 'Content Strategy', to: '/services/content-marketing' },
 ];
 
 export default function Footer() {
@@ -138,8 +138,9 @@ export default function Footer() {
             <span className="text-blue-400 font-semibold">Gibson Giteru</span>
           </p>
           <div className="flex gap-5">
-            <span className="hover:text-blue-300 cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-blue-300 cursor-pointer transition-colors">Terms of Service</span>
+            <Link to="/privacy" className="hover:text-blue-300 transition-colors">Privacy Policy</Link>
+            <Link to="/terms"   className="hover:text-blue-300 transition-colors">Terms of Service</Link>
+            <Link to="/refund"  className="hover:text-blue-300 transition-colors">Refund Policy</Link>
           </div>
         </div>
       </div>

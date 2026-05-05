@@ -2,6 +2,198 @@ import { useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { servicesBySlug, relatedServices } from '../data/servicesData';
 
+/* ── Proof card variant config per slug ── */
+const proofConfig = {
+  'technical-seo':                { v: 'stat' },
+  'on-page-seo':                  { v: 'quote' },
+  'local-seo':                    { v: 'metric-grid', metrics: [{ value: '#1', label: 'Google Maps rank' }, { value: '+330%', label: 'Organic traffic' }, { value: '-60%', label: 'Ad spend cut' }] },
+  'ecommerce-seo':                { v: 'before-after', before: '~0', beforeLabel: 'First-page keywords', after: '1,400+', afterLabel: 'Keywords ranking' },
+  'link-building':                { v: 'growth', bars: [{ label: 'Mo. 2', pct: 15 }, { label: 'Mo. 5', pct: 42 }, { label: 'Mo. 8', pct: 72 }, { label: 'Mo. 10', pct: 100 }] },
+  'enterprise-seo':               { v: 'stat-dark' },
+  'ppc-google-ads':               { v: 'stat-emerald' },
+  'facebook-instagram-ads':       { v: 'roas-steps', steps: [{ value: '1.2x', label: 'Start' }, { value: '2.8x', label: 'Day 45' }, { value: '3.5x', label: 'Month 3' }] },
+  'email-marketing':              { v: 'quote' },
+  'sms-marketing':                { v: 'metric-grid', metrics: [{ value: '8%', label: 'CTR before' }, { value: '28%', label: 'CTR after' }, { value: '3.5×', label: 'Improvement' }] },
+  'content-marketing':            { v: 'growth', bars: [{ label: 'Mo. 3', pct: 18 }, { label: 'Mo. 6', pct: 44 }, { label: 'Mo. 9', pct: 76 }, { label: 'Mo. 11', pct: 100 }] },
+  'conversion-rate-optimization': { v: 'before-after', before: '2.1%', beforeLabel: 'Conversion rate', after: '3.0%', afterLabel: 'After optimisation' },
+  'website-design':               { v: 'quote' },
+  'web-development':              { v: 'award', score: '98', scoreLabel: '/100', badge: 'PageSpeed Score' },
+  'ecommerce-development':        { v: 'stat-emerald' },
+  'mobile-app-development':       { v: 'stat' },
+  'custom-web-applications':      { v: 'metric-grid', metrics: [{ value: '22h', label: 'Weekly time saved' }, { value: '4', label: 'Systems merged' }, { value: '0', label: 'Manual errors' }] },
+  'api-system-integrations':      { v: 'before-after', before: '4 tools', beforeLabel: 'Disconnected systems', after: '1 hub', afterLabel: 'Unified platform' },
+};
+
+function ProofCard({ proof, slug }) {
+  const config = proofConfig[slug] || { v: 'stat' };
+  const { v } = config;
+
+  if (v === 'stat') return (
+    <div className="bg-[#0d3d6e] p-10">
+      <p className="text-blue-300 text-xs font-black uppercase tracking-widest mb-6">Real Result</p>
+      <p className="text-6xl font-black text-emerald-400 mb-2">{proof.stat}</p>
+      <p className="text-white font-bold text-lg mb-6">{proof.statLabel}</p>
+      <p className="text-blue-100 text-sm leading-relaxed">{proof.desc}</p>
+    </div>
+  );
+
+  if (v === 'stat-dark') return (
+    <div className="bg-slate-900 p-10">
+      <p className="text-slate-400 text-xs font-black uppercase tracking-widest mb-6">Real Result</p>
+      <p className="text-6xl font-black text-emerald-400 mb-2">{proof.stat}</p>
+      <p className="text-white font-bold text-lg mb-6">{proof.statLabel}</p>
+      <p className="text-slate-400 text-sm leading-relaxed">{proof.desc}</p>
+    </div>
+  );
+
+  if (v === 'stat-emerald') return (
+    <div className="bg-emerald-600 p-10">
+      <p className="text-emerald-100 text-xs font-black uppercase tracking-widest mb-6">Real Result</p>
+      <p className="text-6xl font-black text-white mb-2">{proof.stat}</p>
+      <p className="text-emerald-100 font-bold text-lg mb-6">{proof.statLabel}</p>
+      <p className="text-white/80 text-sm leading-relaxed">{proof.desc}</p>
+    </div>
+  );
+
+  if (v === 'quote') return (
+    <div className="bg-white border-2 border-slate-100 p-10 relative overflow-hidden">
+      <div className="absolute top-2 left-5 text-8xl text-slate-100 font-black leading-none select-none">"</div>
+      <div className="relative">
+        <div className="flex gap-0.5 mb-5">
+          {[1,2,3,4,5].map(i => <span key={i} className="text-amber-400 text-lg">★</span>)}
+        </div>
+        <p className="text-slate-700 text-sm leading-relaxed italic mb-8">{proof.desc}</p>
+        <div className="border-t border-slate-100 pt-5 flex items-end justify-between">
+          <div>
+            <p className="text-3xl font-black text-emerald-600">{proof.stat}</p>
+            <p className="text-slate-400 text-xs mt-1">{proof.statLabel}</p>
+          </div>
+          <span className="text-xs font-black text-[#1a5fa8] uppercase tracking-widest">Verified Result</span>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (v === 'before-after') {
+    const { before, beforeLabel, after, afterLabel } = config;
+    return (
+      <div className="overflow-hidden border border-slate-200">
+        <div className="bg-slate-800 px-6 py-3">
+          <p className="text-slate-300 text-xs font-black uppercase tracking-widest">Real Result</p>
+        </div>
+        <div className="grid grid-cols-2">
+          <div className="bg-red-50 border-r border-red-100 p-7">
+            <p className="text-red-400 text-[10px] font-black uppercase tracking-widest mb-4">Before</p>
+            <p className="text-3xl font-black text-red-500 mb-2">{before}</p>
+            <p className="text-red-400 text-xs leading-snug">{beforeLabel}</p>
+          </div>
+          <div className="bg-emerald-50 p-7">
+            <p className="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">After</p>
+            <p className="text-3xl font-black text-emerald-600 mb-2">{after}</p>
+            <p className="text-emerald-700 text-xs leading-snug">{afterLabel}</p>
+          </div>
+        </div>
+        <div className="bg-slate-50 p-5 border-t border-slate-200">
+          <p className="text-slate-600 text-xs leading-relaxed">{proof.desc}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (v === 'metric-grid') {
+    const { metrics } = config;
+    return (
+      <div className="bg-white border border-slate-200 overflow-hidden">
+        <div className="bg-[#1a5fa8] px-6 py-3">
+          <p className="text-white text-xs font-black uppercase tracking-widest">Real Result</p>
+        </div>
+        <div className="grid grid-cols-3 divide-x divide-slate-100">
+          {metrics.map(({ value, label }) => (
+            <div key={label} className="p-5 text-center">
+              <p className="text-2xl font-black text-[#0d3d6e] mb-1">{value}</p>
+              <p className="text-[10px] text-slate-400 uppercase tracking-wide leading-snug">{label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="p-5 border-t border-slate-100 bg-slate-50">
+          <p className="text-slate-600 text-xs leading-relaxed">{proof.desc}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (v === 'growth') {
+    const { bars } = config;
+    return (
+      <div className="bg-slate-900 p-10">
+        <p className="text-slate-400 text-xs font-black uppercase tracking-widest mb-2">Real Result</p>
+        <p className="text-4xl font-black text-emerald-400 mb-1">{proof.stat}</p>
+        <p className="text-white text-sm mb-8">{proof.statLabel}</p>
+        <div className="flex items-end gap-3 h-20 mb-2">
+          {bars.map(({ label, pct }) => (
+            <div key={label} className="flex-1 flex flex-col justify-end">
+              <div className="w-full bg-emerald-500 rounded-sm" style={{ height: `${pct}%` }} />
+            </div>
+          ))}
+        </div>
+        <div className="flex gap-3 mb-6">
+          {bars.map(({ label }) => (
+            <p key={label} className="flex-1 text-center text-[9px] text-slate-500 uppercase tracking-wide">{label}</p>
+          ))}
+        </div>
+        <p className="text-slate-500 text-xs leading-relaxed">{proof.desc}</p>
+      </div>
+    );
+  }
+
+  if (v === 'roas-steps') {
+    const { steps } = config;
+    return (
+      <div className="bg-white border border-slate-200 overflow-hidden">
+        <div className="bg-blue-700 px-6 py-3">
+          <p className="text-white text-xs font-black uppercase tracking-widest">Real Result · ROAS Growth</p>
+        </div>
+        <div className="flex items-stretch divide-x divide-slate-100">
+          {steps.map(({ value, label }, i) => (
+            <div key={label} className={`flex-1 p-6 text-center ${i === steps.length - 1 ? 'bg-emerald-50' : ''}`}>
+              <p className={`text-3xl font-black mb-1 ${i === steps.length - 1 ? 'text-emerald-600' : 'text-slate-700'}`}>{value}</p>
+              <p className="text-[10px] text-slate-400 uppercase tracking-wide">{label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="p-5 border-t border-slate-100 bg-slate-50">
+          <p className="text-slate-600 text-xs leading-relaxed">{proof.desc}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (v === 'award') {
+    const { score, scoreLabel, badge } = config;
+    return (
+      <div className="bg-gradient-to-br from-[#0d3d6e] to-slate-900 p-10 text-center">
+        <p className="text-blue-300 text-xs font-black uppercase tracking-widest mb-8">Real Result</p>
+        <div className="inline-flex items-end gap-1 mb-3">
+          <p className="text-8xl font-black text-white leading-none">{score}</p>
+          <p className="text-3xl font-black text-blue-300 leading-none mb-2">{scoreLabel}</p>
+        </div>
+        <p className="text-emerald-400 font-bold text-sm mb-6 uppercase tracking-widest">{badge}</p>
+        <p className="text-blue-100 text-xs leading-relaxed text-left">{proof.desc}</p>
+      </div>
+    );
+  }
+
+  // fallback
+  return (
+    <div className="bg-[#0d3d6e] p-10">
+      <p className="text-blue-300 text-xs font-black uppercase tracking-widest mb-6">Real Result</p>
+      <p className="text-6xl font-black text-emerald-400 mb-2">{proof.stat}</p>
+      <p className="text-white font-bold text-lg mb-6">{proof.statLabel}</p>
+      <p className="text-blue-100 text-sm leading-relaxed">{proof.desc}</p>
+    </div>
+  );
+}
+
 /* ── Hero themes ── */
 const themes = {
   navy:  { bg: 'bg-[#0d3d6e]', accent: 'text-blue-300',  statColor: 'text-emerald-400', badge: 'bg-blue-800/60 text-blue-200' },
@@ -172,12 +364,7 @@ export default function ServicePage() {
 
           {/* Proof card */}
           <div>
-            <div className="bg-[#0d3d6e] p-10">
-              <p className="text-blue-300 text-xs font-black uppercase tracking-widest mb-6">Real Result</p>
-              <p className="text-6xl font-black text-emerald-400 mb-2">{proof.stat}</p>
-              <p className="text-white font-bold text-lg mb-6">{proof.statLabel}</p>
-              <p className="text-blue-100 text-sm leading-relaxed">{proof.desc}</p>
-            </div>
+            <ProofCard proof={proof} slug={slug} />
 
             <div className="mt-6 bg-slate-50 border border-slate-100 p-8">
               <p className="text-xs font-black text-[#1a5fa8] uppercase tracking-widest mb-4">Who This Is For</p>

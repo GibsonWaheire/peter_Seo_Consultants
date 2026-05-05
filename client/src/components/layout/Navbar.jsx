@@ -109,9 +109,12 @@ export default function Navbar() {
             📊 800+ Client Case Studies — Proving Our Results
           </span>
           <div className="flex items-center gap-6 ml-auto">
-            <span className="hidden md:flex items-center gap-1.5 text-white text-xs font-medium">
-              📞 +254 712 000 000
-            </span>
+            <a
+              href="tel:+254727957175"
+              className="hidden md:flex items-center gap-1.5 text-white text-xs font-medium hover:text-yellow-300 transition-colors"
+            >
+              📞 +254 727 957 175
+            </a>
             <Link
               to="/booking"
               className="text-white text-xs font-black uppercase tracking-widest hover:text-yellow-300 transition-colors"
@@ -213,13 +216,20 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Client Login */}
-          <Link
-            to="/login"
-            className="hidden lg:inline-block text-[#1a5fa8] hover:text-[#0d3d6e] text-sm font-black uppercase tracking-widest transition-colors shrink-0"
-          >
-            Client Login
-          </Link>
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
+            <Link
+              to="/pay"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-black px-5 py-2 transition-colors uppercase tracking-widest"
+            >
+              Pay Now
+            </Link>
+            <Link
+              to="/login"
+              className="text-[#1a5fa8] hover:text-[#0d3d6e] text-sm font-black uppercase tracking-widest transition-colors"
+            >
+              Client Login
+            </Link>
+          </div>
         </div>
       </nav>
     </header>

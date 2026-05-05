@@ -7,6 +7,11 @@ import Dashboard from './pages/Dashboard'
 import CaseStudies from './pages/CaseStudies'
 import Pricing from './pages/Pricing'
 import Reviews from './pages/Reviews'
+import OrderPage from './pages/OrderPage'
+import ClientPayPage from './pages/ClientPayPage'
+import TermsOfService from './pages/TermsOfService'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import RefundPolicy from './pages/RefundPolicy'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -25,6 +30,11 @@ function App() {
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/reviews" element={<Reviews />} />
+        <Route path="/order" element={<OrderPage />} />
+        <Route path="/pay" element={<ClientPayPage />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/refund" element={<RefundPolicy />} />
       </Routes>
       <Footer />
     </Router>
