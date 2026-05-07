@@ -227,7 +227,7 @@ export default function Navbar() {
               to="/login"
               className="text-[#1a5fa8] hover:text-[#0d3d6e] text-sm font-black uppercase tracking-widest transition-colors"
             >
-              Client Login
+              Sign In
             </Link>
           </div>
         </div>
