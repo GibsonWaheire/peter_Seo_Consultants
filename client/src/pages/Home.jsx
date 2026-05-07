@@ -144,10 +144,10 @@ export default function Home() {
           {/* Centered intro */}
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-5">
-              Peter SEO Consultants — Kenya's Top-Rated SEO Company
+              Goshen Writing and Consultancies — Kenya's Top-Rated SEO Company
             </h2>
             <p className="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed">
-              Founded in Nairobi, Peter SEO Consultants is Kenya's leading data-driven digital marketing agency. We combine deep local market expertise with world-class SEO strategies to help businesses grow their online presence, generate more leads, and increase revenue.
+              Founded in Nairobi, Goshen Writing and Consultancies is Kenya's leading data-driven digital marketing agency. We combine deep local market expertise with world-class SEO strategies to help businesses grow their online presence, generate more leads, and increase revenue.
             </p>
           </div>
 
@@ -200,7 +200,7 @@ export default function Home() {
               <div className="absolute -bottom-2 -right-2 md:right-0 bg-white shadow-xl rounded-xl p-5 w-[240px] border border-slate-100 z-10">
                 <div className="text-yellow-400 text-sm mb-2">⭐⭐⭐⭐⭐</div>
                 <p className="text-sm text-slate-700 italic mb-2 leading-snug">
-                  "Peter SEO doubled our organic traffic in just 3 months!"
+                  "Goshen doubled our organic traffic in just 3 months!"
                 </p>
                 <p className="text-xs font-bold text-slate-900">— James K., CEO, TechHub Kenya</p>
               </div>
@@ -246,7 +246,7 @@ export default function Home() {
               The SEO landscape has fundamentally shifted. Artificial intelligence is reshaping how search engines evaluate content, rank pages, and deliver results. Agencies that don't adapt are already falling behind — and taking their clients with them.
             </p>
             <p className="text-gray-500 leading-relaxed mb-8">
-              At Peter SEO, we've rebuilt our entire methodology around AI-era search signals: topical authority, entity optimization, structured data, and experience-driven content. We don't just keep up — we stay ahead.
+              At Goshen, we've rebuilt our entire methodology around AI-era search signals: topical authority, entity optimization, structured data, and experience-driven content. We don't just keep up — we stay ahead.
             </p>
 
             <h3 className="text-xl font-black text-slate-900 mb-3">Watch Out for Pretenders</h3>
@@ -254,7 +254,7 @@ export default function Home() {
               The digital marketing space is full of agencies that promise the world and deliver a monthly PDF. Be wary of anyone guaranteeing "#1 rankings in 30 days" or selling cheap backlink packages. Real SEO takes strategy, expertise, and consistent execution.
             </p>
 
-            <h3 className="text-xl font-black text-slate-900 mb-3">Why Peter SEO?</h3>
+            <h3 className="text-xl font-black text-slate-900 mb-3">Why Goshen?</h3>
             <p className="text-gray-500 leading-relaxed">
               Because we treat your business like our own. Our strategists work directly with you — no account managers passing messages, no outsourced work. Just experienced SEO professionals committed to growing your revenue through organic search.
             </p>
@@ -338,7 +338,7 @@ export default function Home() {
             "Our mission is simple: to be the most results-driven SEO agency in Kenya. Every strategy we build, every campaign we run, every report we deliver — it all comes back to one question: is this growing our client's business?"
           </p>
           <p className="text-white font-black text-sm uppercase tracking-widest">
-            — Peter Mwangi, Founder &amp; SEO Director
+            — Goshen, Founder &amp; Director
           </p>
         </div>
       </section>
@@ -530,7 +530,7 @@ export default function Home() {
             Ready to Grow Your Business?
           </h2>
           <p className="text-blue-200 text-lg mb-10 max-w-xl mx-auto">
-            Join 1,000+ businesses across Kenya that trust Peter SEO Consultants to drive their online growth.
+            Join 1,000+ businesses across Kenya that trust Goshen Writing and Consultancies to drive their online growth.
           </p>
           <Link
             to="/booking"

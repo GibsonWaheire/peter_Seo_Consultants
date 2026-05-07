@@ -540,7 +540,7 @@ export default function ClientPayPage() {
                 className="mt-0.5 w-4 h-4 accent-emerald-600 cursor-pointer shrink-0"
               />
               <span className="text-xs text-slate-600 leading-relaxed">
-                I agree to Peter SEO Consultants&apos;{' '}
+                I agree to Goshen Writing and Consultancies&apos;{' '}
                 <Link to="/terms"   target="_blank" className="underline text-slate-900">Terms of Service</Link>,{' '}
                 <Link to="/refund"  target="_blank" className="underline text-slate-900">Refund Policy</Link>, and{' '}
                 <Link to="/privacy" target="_blank" className="underline text-slate-900">Privacy Policy</Link>.

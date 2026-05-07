@@ -21,7 +21,7 @@ export default function Booking() {
     e.preventDefault();
     setSubmitted(true);
     const msg = [
-      `Hi Peter SEO, I'd like to book a strategy call.`,
+      `Hi Goshen, I'd like to book a strategy call.`,
       ``,
       `*Name:* ${form.name}`,
       `*Email:* ${form.email}`,
@@ -80,7 +80,7 @@ export default function Booking() {
                 {Array(5).fill('★').map((s, i) => <span key={i} className="text-lg">{s}</span>)}
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic mb-4">
-                &ldquo;Peter&apos;s team took us from page 4 to the top 3 results in under 90 days. The ROI has been incredible.&rdquo;
+                &ldquo;Goshen&apos;s team took us from page 4 to the top 3 results in under 90 days. The ROI has been incredible.&rdquo;
               </p>
               <p className="text-slate-500 text-xs font-semibold">— Sarah M., E-commerce Founder</p>
             </div>

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const googleReviews = [
-  { name: 'James Mwangi', role: 'CEO, Retail Brand', rating: 5, text: 'Peter SEO took our website from page 4 to page 1 for our top 3 keywords in under 5 months. The reporting is transparent, the team is responsive, and the results speak for themselves.' },
-  { name: 'Amina Hassan', role: 'Marketing Director, Fintech', rating: 5, text: 'We\'ve worked with three SEO agencies before Peter SEO. None came close. Within 8 months, our organic leads tripled and our cost per acquisition dropped by 40%.' },
+  { name: 'James Mwangi', role: 'CEO, Retail Brand', rating: 5, text: 'Goshen took our website from page 4 to page 1 for our top 3 keywords in under 5 months. The reporting is transparent, the team is responsive, and the results speak for themselves.' },
+  { name: 'Amina Hassan', role: 'Marketing Director, Fintech', rating: 5, text: 'We\'ve worked with three SEO agencies before Goshen. None came close. Within 8 months, our organic leads tripled and our cost per acquisition dropped by 40%.' },
   { name: 'David Otieno', role: 'Founder, LegalTech Startup', rating: 5, text: 'Exceptional service. They explained every step clearly and the results exceeded our projections. Our trial sign-ups from organic search are now our #1 acquisition channel.' },
   { name: 'Grace Kamau', role: 'Owner, E-Commerce Store', rating: 5, text: 'I was skeptical about SEO at first, but the team showed me exactly what they were doing and why. 6 months in and our revenue from organic is up 280%. Worth every shilling.' },
-  { name: 'Peter Njoroge', role: 'Head of Growth, SaaS Company', rating: 5, text: 'Professional, results-driven, and honest about timelines. They set realistic expectations and then beat them. I recommend Peter SEO to every founder I meet.' },
+  { name: 'Peter Njoroge', role: 'Head of Growth, SaaS Company', rating: 5, text: 'Professional, results-driven, and honest about timelines. They set realistic expectations and then beat them. I recommend Goshen to every founder I meet.' },
   { name: 'Sarah Achieng', role: 'Director, Healthcare Group', rating: 5, text: 'Our patient enquiries from Google doubled in 7 months. The local SEO work they did for our clinics was particularly impressive. Highly recommended.' },
 ];
 
@@ -21,7 +21,7 @@ const clutchReviews = [
     name: 'Anonymous',
     role: 'VP Marketing, B2B Software',
     rating: 5,
-    text: 'Peter SEO delivered a comprehensive technical audit, fixed critical crawl issues, and built a content strategy that drove a 260% increase in organic trial sign-ups over 11 months. Exceptional ROI.',
+    text: 'Goshen delivered a comprehensive technical audit, fixed critical crawl issues, and built a content strategy that drove a 260% increase in organic trial sign-ups over 11 months. Exceptional ROI.',
     project: 'SEO Growth — 11 Months',
   },
   {
