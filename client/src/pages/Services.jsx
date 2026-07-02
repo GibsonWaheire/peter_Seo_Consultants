@@ -97,7 +97,7 @@ function SectionHeader({ eyebrow, title, desc }) {
 export default function Services() {
   usePageMeta({
     title: 'SEO & Digital Marketing Services Kenya | Iknus Consultants',
-    description: 'Explore Iknus Consultants' full range of services: Technical SEO, Local SEO, Google Ads, social media ads, web design & development for businesses in Kenya.',
+    description: "Explore Iknus Consultants' full range of services: Technical SEO, Local SEO, Google Ads, social media ads, web design & development for businesses in Kenya.",
     canonical: 'https://iknusconsultants.com/services',
   });
   return (

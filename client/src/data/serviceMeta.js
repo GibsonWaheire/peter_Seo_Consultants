@@ -15,17 +15,17 @@ const serviceMeta = {
   },
   'local-seo': {
     title: 'Local SEO Services Kenya | Dominate Google Maps & Local Search | Iknus',
-    description: 'Get your business into the Google Maps top 3 in Nairobi and across Kenya. Iknus Consultants' Local SEO services drive foot traffic and local leads.',
+    description: "Get your business into the Google Maps top 3 in Nairobi and across Kenya. Iknus Consultants' Local SEO services drive foot traffic and local leads.",
     canonical: `${BASE}/services/local-seo`,
   },
   'ecommerce-seo': {
     title: 'E-Commerce SEO Kenya | Drive Product Traffic & Increase Sales | Iknus',
-    description: 'Drive more product traffic and increase online sales with E-Commerce SEO from Iknus Consultants — Kenya's digital marketing experts. From product pages to category SEO.',
+    description: "Drive more product traffic and increase online sales with E-Commerce SEO from Iknus Consultants — Kenya's digital marketing experts. From product pages to category SEO.",
     canonical: `${BASE}/services/ecommerce-seo`,
   },
   'link-building': {
     title: 'Link Building Services Kenya | Quality Backlinks & Domain Authority | Iknus',
-    description: 'Build domain authority with white-hat backlinks. Iknus Consultants' link building service moves Kenyan businesses up Google rankings — no PBNs, no shortcuts.',
+    description: "Build domain authority with white-hat backlinks. Iknus Consultants' link building service moves Kenyan businesses up Google rankings — no PBNs, no shortcuts.",
     canonical: `${BASE}/services/link-building`,
   },
   'enterprise-seo': {
