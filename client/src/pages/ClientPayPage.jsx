@@ -101,7 +101,7 @@ const COUNTRIES = [
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 const inputCls = (err) =>
-  `w-full bg-white border px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1a5fa8] focus:border-transparent transition ${err ? 'border-red-400' : 'border-slate-200'}`
+  `w-full bg-white border px-4 py-3 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1a5fa8] focus:border-transparent transition ${err ? 'border-red-400' : 'border-slate-200'}`
 
 const labelCls = 'block text-xs font-semibold text-slate-700 uppercase tracking-wide mb-2'
 
@@ -361,7 +361,7 @@ export default function ClientPayPage() {
               onChange={e => { setNotes(e.target.value); setUserEditedNotes(true); setErrors(v => ({ ...v, notes: '' })) }}
               placeholder={project === 'Custom / Other' ? 'e.g. Monthly SEO for a law firm targeting 15 keywords' : ''}
               rows={project === 'Custom / Other' ? 3 : 2}
-              className={`w-full bg-white border px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1a5fa8] resize-none transition ${errors.notes ? 'border-red-400' : 'border-slate-200'}`}
+              className={`w-full bg-white border px-4 py-3 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1a5fa8] resize-none transition ${errors.notes ? 'border-red-400' : 'border-slate-200'}`}
             />
             {errMsg('notes')}
           </div>
@@ -409,7 +409,7 @@ export default function ClientPayPage() {
                 value={inputAmount}
                 onChange={e => { setInputAmount(e.target.value); setErrors(v => ({ ...v, amount: '' })) }}
                 placeholder="0.00"
-                className={`w-full bg-white border pl-16 pr-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#1a5fa8] transition ${errors.amount ? 'border-red-400' : 'border-slate-200'}`}
+                className={`w-full bg-white border pl-16 pr-4 py-3 text-slate-900 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1a5fa8] transition ${errors.amount ? 'border-red-400' : 'border-slate-200'}`}
               />
             </div>
             {errMsg('amount')}
@@ -516,7 +516,7 @@ export default function ClientPayPage() {
               <select
                 value={phoneCountry.code}
                 onChange={e => { setPhoneCountry(COUNTRIES.find(c => c.code === e.target.value)); setPhoneLocal(''); setErrors(v => ({ ...v, phone: '' })) }}
-                className="bg-slate-50 border-r border-slate-200 text-slate-700 text-sm px-2 py-3 focus:outline-none shrink-0 cursor-pointer"
+                className="bg-slate-50 border-r border-slate-200 text-slate-700 text-base sm:text-sm px-2 py-3 focus:outline-none shrink-0 cursor-pointer"
               >
                 {COUNTRIES.map(c => (
                   <option key={c.code} value={c.code}>
@@ -530,7 +530,7 @@ export default function ClientPayPage() {
                 value={phoneLocal}
                 onChange={e => { setPhoneLocal(e.target.value.replace(/[^\d\s]/g, '')); setErrors(v => ({ ...v, phone: '' })) }}
                 placeholder={phoneCountry.placeholder}
-                className="flex-1 bg-white px-3 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none"
+                className="flex-1 bg-white px-3 py-3 text-slate-900 placeholder-slate-400 text-base sm:text-sm focus:outline-none"
               />
             </div>
             {phoneInvalid && !errors.phone && (

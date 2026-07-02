@@ -30,10 +30,30 @@ export default function PaymentSheet({
     }
   }, [open])
 
-  // Lock body scroll while sheet is open
+  // Lock body scroll while sheet is open (iOS-safe: use position:fixed trick)
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    if (open) {
+      const scrollY = window.scrollY
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.width = '100%'
+    } else {
+      const scrollY = document.body.style.top
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      window.scrollTo(0, parseInt(scrollY || '0') * -1)
+    }
+    return () => {
+      const scrollY = document.body.style.top
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      window.scrollTo(0, parseInt(scrollY || '0') * -1)
+    }
   }, [open])
 
   if (!mounted) return null
@@ -52,7 +72,7 @@ export default function PaymentSheet({
         className={`
           relative w-full sm:max-w-md bg-white
           rounded-t-2xl sm:rounded-2xl
-          max-h-[92vh] flex flex-col shadow-2xl
+          max-h-[92dvh] sm:max-h-[92vh] flex flex-col shadow-2xl
           transition-all duration-300 ease-out
           ${visible
             ? 'translate-y-0 opacity-100 sm:scale-100'
@@ -88,7 +108,7 @@ export default function PaymentSheet({
         </div>
 
         {/* Scrollable content */}
-        <div className="overflow-y-auto flex-1 p-4">
+        <div className="overflow-y-auto flex-1 p-4 pb-[max(1rem,env(safe-area-inset-bottom))]" style={{ WebkitOverflowScrolling: 'touch' }}>
           <PaymentMethods
             amount={amount}
             serviceName={serviceName}
