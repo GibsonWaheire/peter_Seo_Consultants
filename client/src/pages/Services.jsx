@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
+import usePageMeta from '../hooks/usePageMeta';
 
 /* ── Data ── */
 
@@ -94,6 +95,11 @@ function SectionHeader({ eyebrow, title, desc }) {
 /* ── Page ── */
 
 export default function Services() {
+  usePageMeta({
+    title: 'SEO & Digital Marketing Services Kenya | Iknus Consultants',
+    description: 'Explore Iknus Consultants' full range of services: Technical SEO, Local SEO, Google Ads, social media ads, web design & development for businesses in Kenya.',
+    canonical: 'https://iknusconsultants.com/services',
+  });
   return (
     <main className="pt-[104px] bg-white">
 

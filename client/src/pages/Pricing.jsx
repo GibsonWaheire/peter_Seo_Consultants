@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import usePageMeta from '../hooks/usePageMeta';
 
 const plans = [
   {
@@ -222,6 +223,11 @@ const faqs = [
 ];
 
 export default function Pricing() {
+  usePageMeta({
+    title: 'SEO & Marketing Pricing Kenya | Transparent Plans | Iknus Consultants',
+    description: 'Clear, transparent pricing for SEO, Google Ads, web design & development in Kenya. No hidden fees. Choose a plan or get a custom quote from Iknus Consultants.',
+    canonical: 'https://iknusconsultants.com/pricing',
+  });
   const navigate = useNavigate();
 
   const handlePlanCta = (plan) => {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import usePageMeta from '../hooks/usePageMeta';
 
 const trustPoints = [
   { icon: '📞', title: 'Free 30-Min Strategy Call', desc: 'No commitment. We map out what SEO growth looks like for your specific business.' },
@@ -10,6 +11,11 @@ const inputClass =
   'w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition bg-white';
 
 export default function Booking() {
+  usePageMeta({
+    title: 'Book a Free SEO Strategy Call | Iknus Consultants Kenya',
+    description: 'Book a free 30-minute SEO strategy call with Iknus Consultants. Get a custom audit and growth roadmap for your business — no commitment required.',
+    canonical: 'https://iknusconsultants.com/booking',
+  });
   const [form, setForm] = useState({ name: '', email: '', website: '', service: '', budget: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -21,7 +27,7 @@ export default function Booking() {
     e.preventDefault();
     setSubmitted(true);
     const msg = [
-      `Hi Goshen, I'd like to book a strategy call.`,
+      `Hi Iknus, I'd like to book a strategy call.`,
       ``,
       `*Name:* ${form.name}`,
       `*Email:* ${form.email}`,
@@ -80,7 +86,7 @@ export default function Booking() {
                 {Array(5).fill('★').map((s, i) => <span key={i} className="text-lg">{s}</span>)}
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic mb-4">
-                &ldquo;Goshen&apos;s team took us from page 4 to the top 3 results in under 90 days. The ROI has been incredible.&rdquo;
+                &ldquo;Iknus&apos;s team took us from page 4 to the top 3 results in under 90 days. The ROI has been incredible.&rdquo;
               </p>
               <p className="text-slate-500 text-xs font-semibold">— Sarah M., E-commerce Founder</p>
             </div>

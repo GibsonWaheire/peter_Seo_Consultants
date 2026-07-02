@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { servicesBySlug, relatedServices } from '../data/servicesData';
+import serviceMeta from '../data/serviceMeta';
+import usePageMeta from '../hooks/usePageMeta';
 
 /* ── Proof card variant config per slug ── */
 const proofConfig = {
@@ -225,6 +227,8 @@ function FaqItem({ q, a }) {
 export default function ServicePage() {
   const { slug } = useParams();
   const service = servicesBySlug[slug];
+  const meta = serviceMeta[slug] || {};
+  usePageMeta(meta);
 
   if (!service) return <Navigate to="/services" replace />;
 
