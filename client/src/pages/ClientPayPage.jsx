@@ -135,21 +135,28 @@ export default function ClientPayPage() {
   const [step,          setStep]          = useState(1)
   const [sheetOpen,     setSheetOpen]     = useState(false)
 
-  const [rate,        setRate]        = useState(null)
+  const [rates,       setRates]       = useState(null)
   const [rateLoading, setRateLoading] = useState(true)
 
   useEffect(() => {
     fetch('https://open.er-api.com/v6/latest/KES')
       .then(r => r.json())
-      .then(d => { setRate(d.rates?.AED ?? 0.027); setRateLoading(false) })
-      .catch(() => { setRate(0.027); setRateLoading(false) })
+      .then(d => {
+        setRates({ AED: d.rates?.AED ?? 0.027, USD: d.rates?.USD ?? 0.0077 })
+        setRateLoading(false)
+      })
+      .catch(() => { setRates({ AED: 0.027, USD: 0.0077 }); setRateLoading(false) })
   }, [])
 
-  const parsedInput   = parseFloat(inputAmount) || 0
-  const amountKES     = inputCurrency === 'KES' ? parsedInput : (rate ? Math.ceil(parsedInput / rate) : 0)
-  const amountAED     = inputCurrency === 'AED' ? parsedInput : (rate ? parsedInput * rate : 0)
-  const partialKES    = amountKES * (partialPercent / 100)
-  const chargeKES     = paymentType === 'full' ? amountKES : partialKES
+  const parsedInput = parseFloat(inputAmount) || 0
+  const amountKES   = inputCurrency === 'KES' ? parsedInput
+    : inputCurrency === 'AED' ? (rates ? Math.ceil(parsedInput / rates.AED) : 0)
+    : inputCurrency === 'USD' ? (rates ? Math.ceil(parsedInput / rates.USD) : 0)
+    : 0
+  const amountAED   = rates ? amountKES * rates.AED : 0
+  const amountUSD   = rates ? amountKES * rates.USD : 0
+  const partialKES  = amountKES * (partialPercent / 100)
+  const chargeKES   = paymentType === 'full' ? amountKES : partialKES
 
   const fmt = (n, currency) =>
     new Intl.NumberFormat('en-KE', { style: 'currency', currency, maximumFractionDigits: 2 }).format(n)
@@ -236,6 +243,9 @@ export default function ClientPayPage() {
                 <p className="text-3xl font-black text-[#0d3d6e]">{fmt(chargeKES, 'KES')}</p>
                 {inputCurrency === 'AED' && (
                   <p className="text-slate-400 text-xs mt-0.5">≈ {fmt(amountAED * (chargeKES / amountKES || 1), 'AED')}</p>
+                )}
+                {inputCurrency === 'USD' && (
+                  <p className="text-slate-400 text-xs mt-0.5">≈ {fmt(amountUSD * (chargeKES / amountKES || 1), 'USD')}</p>
                 )}
               </div>
             </div>
@@ -377,7 +387,7 @@ export default function ClientPayPage() {
               </div>
             )}
             <div className="flex gap-2 mb-2.5">
-              {['KES', 'AED'].map(c => (
+              {['KES', 'AED', 'USD'].map(c => (
                 <button
                   key={c}
                   type="button"
@@ -403,14 +413,14 @@ export default function ClientPayPage() {
               />
             </div>
             {errMsg('amount')}
-            {parsedInput > 0 && rate && (
+            {parsedInput > 0 && rates && (
               <div className="mt-2 flex items-center justify-between bg-slate-50 border border-slate-200 px-4 py-3">
                 <div>
                   <p className="text-slate-900 font-bold text-sm">{fmt(amountKES, 'KES')}</p>
-                  <p className="text-slate-400 text-xs">≈ {fmt(amountAED, 'AED')}</p>
+                  <p className="text-slate-400 text-xs">≈ {fmt(amountAED, 'AED')} · {fmt(amountUSD, 'USD')}</p>
                 </div>
                 <p className="text-slate-400 text-xs text-right">
-                  {rateLoading ? 'Loading…' : `1 KES = ${rate.toFixed(4)} AED`}
+                  {rateLoading ? 'Loading…' : `1 KES = ${rates.USD.toFixed(5)} USD`}
                   <br /><span className="text-slate-300">live rate</span>
                 </p>
               </div>
@@ -456,6 +466,7 @@ export default function ClientPayPage() {
                     <p className="text-slate-500 text-xs mt-2">
                       Paying <span className="font-bold text-slate-800">{fmt(chargeKES, 'KES')}</span>
                       {inputCurrency === 'AED' && <span> ≈ {fmt(parsedInput * (partialPercent / 100), 'AED')}</span>}
+                      {inputCurrency === 'USD' && <span> ≈ {fmt(parsedInput * (partialPercent / 100), 'USD')}</span>}
                       {' '}now · remaining {fmt(amountKES - partialKES, 'KES')} due on delivery
                     </p>
                   )}
@@ -540,7 +551,7 @@ export default function ClientPayPage() {
                 className="mt-0.5 w-4 h-4 accent-emerald-600 cursor-pointer shrink-0"
               />
               <span className="text-xs text-slate-600 leading-relaxed">
-                I agree to Goshen Writing and Consultancies&apos;{' '}
+                I agree to Iknus Consultants&apos;{' '}
                 <Link to="/terms"   target="_blank" className="underline text-slate-900">Terms of Service</Link>,{' '}
                 <Link to="/refund"  target="_blank" className="underline text-slate-900">Refund Policy</Link>, and{' '}
                 <Link to="/privacy" target="_blank" className="underline text-slate-900">Privacy Policy</Link>.
