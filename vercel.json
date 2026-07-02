@@ -3,15 +3,11 @@
   "outputDirectory": "client/dist",
   "installCommand": "echo 'skip root install'",
   "framework": null,
-  "headers": [
+  "rewrites": [
     {
       "source": "/.well-known/apple-developer-merchantid-domain-association",
-      "headers": [
-        { "key": "Content-Type", "value": "application/text" }
-      ]
-    }
-  ],
-  "rewrites": [
+      "destination": "/api/apple-pay-verification"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
