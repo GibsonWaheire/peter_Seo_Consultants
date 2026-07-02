@@ -4,6 +4,7 @@
   "installCommand": "echo 'skip root install'",
   "framework": null,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/.well-known/(.*)", "destination": "/.well-known/$1" },
+    { "source": "/((?!.well-known).*)", "destination": "/index.html" }
   ]
 }
