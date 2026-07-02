@@ -52,7 +52,7 @@ export default function Login() {
       {/* Left panel — branding */}
       <div className="hidden lg:flex lg:w-1/2 bg-[#0d3d6e] flex-col justify-between px-16 py-16">
         <Link to="/" className="inline-block border-2 border-white px-4 py-2 text-white font-black text-xl tracking-widest uppercase w-fit">
-          Goshen
+          Iknus
         </Link>
         <div>
           <h2 className="text-white text-4xl font-black leading-tight mb-6">
@@ -78,7 +78,7 @@ export default function Login() {
           {/* Mobile logo */}
           <div className="lg:hidden text-center mb-10">
             <Link to="/" className="inline-block border-2 border-[#0d3d6e] px-4 py-2 text-[#0d3d6e] font-black text-xl tracking-widest uppercase">
-              Goshen
+              Iknus
             </Link>
           </div>
 

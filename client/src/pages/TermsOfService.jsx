@@ -23,7 +23,7 @@ export default function TermsOfService() {
 
           {/* Print header */}
           <div className="hidden page-header-print">
-            <h1 className="text-2xl font-bold">Goshen Writing and Consultancies — Terms &amp; Conditions</h1>
+            <h1 className="text-2xl font-bold">Iknus Consultants — Terms &amp; Conditions</h1>
             <p className="text-sm text-slate-500">Last updated: 15 April 2026 · waheire60@gmail.com · +254 727 957 175</p>
           </div>
 
@@ -35,10 +35,10 @@ export default function TermsOfService() {
           {/* Intro box */}
           <div className="bg-slate-900 text-white rounded-xl p-6 mb-6 text-sm leading-relaxed">
             These Terms and Conditions ("Agreement") constitute a legally binding contract between
-            you ("Client", "you", "your") and Goshen Writing and Consultancies ("Company", "we", "us", "our"),
+            you ("Client", "you", "your") and Iknus Consultants ("Company", "we", "us", "our"),
             an SEO and digital marketing consultancy registered and operating in Nairobi, Kenya.
             By accessing this website, requesting a quote, or completing any payment transaction
-            with Goshen Writing and Consultancies, you unconditionally accept and agree to be bound by the
+            with Iknus Consultants, you unconditionally accept and agree to be bound by the
             terms set out herein. If you do not agree with any part of this Agreement, you must
             not use our services.
           </div>
@@ -47,9 +47,9 @@ export default function TermsOfService() {
 
             <Section title="1. Parties and Agreement">
               <p>
-                This Agreement is entered into between Goshen Writing and Consultancies (Nairobi, Kenya)
+                This Agreement is entered into between Iknus Consultants (Nairobi, Kenya)
                 and the Client. It governs all services procured through our website, via WhatsApp,
-                or through any other channel through which Goshen Writing and Consultancies receives a service
+                or through any other channel through which Iknus Consultants receives a service
                 request or payment.
               </p>
               <p>
@@ -63,7 +63,7 @@ export default function TermsOfService() {
 
             <Section title="2. Scope of Services">
               <p>
-                Goshen Writing and Consultancies provides the following categories of services, the full details
+                Iknus Consultants provides the following categories of services, the full details
                 of which are set out on our Services and Pricing pages:
               </p>
               <ul className="list-disc pl-5 space-y-1">
@@ -85,7 +85,7 @@ export default function TermsOfService() {
             <Section title="3. Payment Obligations">
               <p>
                 Payment is due in full (or as a confirmed deposit) prior to commencement of any work,
-                unless a separate written arrangement has been agreed. Goshen Writing and Consultancies shall
+                unless a separate written arrangement has been agreed. Iknus Consultants shall
                 not be obligated to commence or continue any service until payment has been received
                 and verified.
               </p>
@@ -97,7 +97,7 @@ export default function TermsOfService() {
                 <li>
                   <strong className="text-slate-800">International clients (UAE and other):</strong> Where
                   payment is entered in AED or another foreign currency, the equivalent KES amount is
-                  calculated using the live exchange rate at the time of transaction. Goshen Writing and Consultancies
+                  calculated using the live exchange rate at the time of transaction. Iknus Consultants
                   is not responsible for currency fluctuations between quote and payment.
                 </li>
                 <li>
@@ -115,13 +115,13 @@ export default function TermsOfService() {
 
             <Section title="4. Refunds">
               <p>
-                All refunds are governed by Goshen Writing and Consultancies'{' '}
+                All refunds are governed by Iknus Consultants'{' '}
                 <a href="/refund" className="text-emerald-600 underline">Refund Policy</a>, which forms
                 part of this Agreement. Where an approved refund is due, it shall be returned exclusively
-                via the same payment channel used for the original transaction. Goshen Writing and Consultancies shall
+                via the same payment channel used for the original transaction. Iknus Consultants shall
                 not redirect refunds to any alternative account, number, or payment method. International
                 clients should note that currency conversion differences and any fees imposed by their
-                card issuer or bank are non-reimbursable by Goshen Writing and Consultancies.
+                card issuer or bank are non-reimbursable by Iknus Consultants.
               </p>
             </Section>
 
@@ -129,7 +129,7 @@ export default function TermsOfService() {
               <p>
                 Turnaround times published on this website are reasonable estimates based on normal
                 operating conditions (Monday–Saturday, 8:00 am–8:00 pm EAT). They do not constitute
-                guaranteed delivery dates. Goshen Writing and Consultancies shall not be held in breach of this
+                guaranteed delivery dates. Iknus Consultants shall not be held in breach of this
                 Agreement solely on account of delays attributable to:
               </p>
               <ul className="list-disc pl-5 space-y-1">
@@ -138,21 +138,21 @@ export default function TermsOfService() {
                 <li>Public holidays, force majeure events, or other circumstances beyond our control</li>
               </ul>
               <p>
-                Goshen Writing and Consultancies shall notify the Client of any material delay and shall take
+                Iknus Consultants shall notify the Client of any material delay and shall take
                 reasonable steps to complete the service as soon as practicable.
               </p>
             </Section>
 
             <Section title="6. Client Obligations">
-              <p>By engaging Goshen Writing and Consultancies, the Client agrees to:</p>
+              <p>By engaging Iknus Consultants, the Client agrees to:</p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Provide accurate, complete, and truthful information required for service delivery</li>
-                <li>Respond to queries from Goshen Writing and Consultancies within a reasonable time to avoid project delays</li>
+                <li>Respond to queries from Iknus Consultants within a reasonable time to avoid project delays</li>
                 <li>Grant necessary access to website, analytics, and ad accounts required to perform the agreed service</li>
-                <li>Use Goshen Writing and Consultancies' services solely for lawful purposes and in compliance with all applicable laws of Kenya</li>
+                <li>Use Iknus Consultants' services solely for lawful purposes and in compliance with all applicable laws of Kenya</li>
               </ul>
               <p>
-                Goshen Writing and Consultancies reserves the right to suspend or terminate service delivery
+                Iknus Consultants reserves the right to suspend or terminate service delivery
                 without refund if the Client is found to have provided false information or to be
                 using the service for unlawful purposes.
               </p>
@@ -162,7 +162,7 @@ export default function TermsOfService() {
               <p>
                 Upon receipt of final payment in full, all intellectual property rights in the
                 deliverables produced for the Client (including website code, design assets, content,
-                and strategy documents) are assigned to the Client. Goshen Writing and Consultancies retains no
+                and strategy documents) are assigned to the Client. Iknus Consultants retains no
                 ongoing licence to use such materials, save that the Company reserves the right to
                 display completed work in its portfolio unless the Client provides written objection
                 within 14 days of delivery.
@@ -175,20 +175,20 @@ export default function TermsOfService() {
 
             <Section title="8. Limitation of Liability">
               <p>
-                To the maximum extent permitted by applicable law, Goshen Writing and Consultancies' total
+                To the maximum extent permitted by applicable law, Iknus Consultants' total
                 aggregate liability to the Client under or in connection with this Agreement shall
                 not exceed the total fees paid by the Client for the specific service giving rise
                 to the claim.
               </p>
               <p>
-                Goshen Writing and Consultancies shall not be liable for any indirect, consequential, special,
+                Iknus Consultants shall not be liable for any indirect, consequential, special,
                 or punitive damages, including but not limited to loss of revenue, loss of data, loss
                 of business opportunity, or reputational damage, whether arising in contract, tort,
-                or otherwise, even if Goshen Writing and Consultancies has been advised of the possibility of
+                or otherwise, even if Iknus Consultants has been advised of the possibility of
                 such damages.
               </p>
               <p>
-                Goshen Writing and Consultancies expressly excludes liability for ranking fluctuations caused
+                Iknus Consultants expressly excludes liability for ranking fluctuations caused
                 by search engine algorithm updates, delays or errors caused by third-party platforms
                 (including Paystack, Safaricom, Google, or Meta), or the Client's own acts or omissions.
               </p>
@@ -209,21 +209,21 @@ export default function TermsOfService() {
               <p>
                 This Agreement shall be governed by and construed in accordance with the laws of Kenya.
                 Any dispute, controversy, or claim arising out of or in connection with this Agreement
-                shall first be referred to Goshen Writing and Consultancies for informal resolution. If not resolved
+                shall first be referred to Iknus Consultants for informal resolution. If not resolved
                 within 14 days, the matter shall be subject to the exclusive jurisdiction of the competent
                 courts of Kenya.
               </p>
               <p>
                 International clients, including those located in the UAE, Gulf Cooperation Council
                 (GCC) states, or any other jurisdiction, expressly agree that Kenyan law governs
-                all transactions and disputes with Goshen Writing and Consultancies, and waive any objection to
+                all transactions and disputes with Iknus Consultants, and waive any objection to
                 Kenyan jurisdiction on grounds of inconvenience or otherwise.
               </p>
             </Section>
 
             <Section title="11. Amendments">
               <p>
-                Goshen Writing and Consultancies reserves the right to amend this Agreement at any time. The
+                Iknus Consultants reserves the right to amend this Agreement at any time. The
                 version published on this page at the date of your order shall be the version that
                 governs your transaction. Continued use of the website or services after any amendment
                 constitutes acceptance of the revised terms.
@@ -232,7 +232,7 @@ export default function TermsOfService() {
 
             <Section title="12. Contact">
               <p>
-                For any questions, disputes, or notices under this Agreement, contact Goshen Writing and Consultancies at:
+                For any questions, disputes, or notices under this Agreement, contact Iknus Consultants at:
               </p>
               <ul className="list-none space-y-1">
                 <li><strong className="text-slate-800">Email:</strong>{' '}

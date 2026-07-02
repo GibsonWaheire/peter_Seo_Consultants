@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="lg:col-span-1">
           <Link to="/" className="inline-block mb-4">
             <span className="border-2 border-white px-3 py-1.5 text-white font-black text-base tracking-widest uppercase">
-              Goshen
+              Iknus
             </span>
           </Link>
           <p className="text-sm leading-relaxed mb-6 text-blue-300">
@@ -113,10 +113,10 @@ export default function Footer() {
             <li className="flex items-center gap-3">
               <span className="text-[#1a5fa8] text-base shrink-0">✉️</span>
               <a
-                href="mailto:hello@goshen.co.ke"
+                href="mailto:hello@iknus.co.ke"
                 className="text-blue-300 hover:text-white transition-colors"
               >
-                hello@goshen.co.ke
+                hello@iknus.co.ke
               </a>
             </li>
           </ul>
@@ -132,7 +132,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-blue-900">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-500">
-          <p>© {new Date().getFullYear()} Goshen Writing and Consultancies. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Iknus Consultants. All rights reserved.</p>
           <p className="text-blue-600">
             Developed by{' '}
             <span className="text-blue-400 font-semibold">Gibson Giteru</span>

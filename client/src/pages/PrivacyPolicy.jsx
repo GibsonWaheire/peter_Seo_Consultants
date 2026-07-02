@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
 
           {/* Print header */}
           <div className="hidden page-header-print">
-            <h1 className="text-2xl font-bold">Goshen Writing and Consultancies — Privacy Notice</h1>
+            <h1 className="text-2xl font-bold">Iknus Consultants — Privacy Notice</h1>
             <p className="text-sm text-slate-500">Last updated: 15 April 2026 · waheire60@gmail.com · +254 727 957 175</p>
           </div>
 
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
 
           {/* Intro box */}
           <div className="bg-slate-900 text-white rounded-xl p-6 mb-6 text-sm leading-relaxed">
-            This Privacy Notice ("Notice") explains how Goshen Writing and Consultancies ("Company", "we",
+            This Privacy Notice ("Notice") explains how Iknus Consultants ("Company", "we",
             "us", "our") collects, uses, stores, and protects personal data belonging to individuals
             ("you", "your") who interact with our website or engage our services. This Notice is
             issued in accordance with the Kenya Data Protection Act, 2019 and applicable international
@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
 
             <Section title="1. Data Controller">
               <p>
-                The data controller responsible for your personal information is Goshen Writing and Consultancies,
+                The data controller responsible for your personal information is Iknus Consultants,
                 an SEO and digital marketing consultancy based in Nairobi, Kenya.
               </p>
               <ul className="list-none space-y-1">
@@ -183,7 +183,7 @@ export default function PrivacyPolicy() {
 
             <Section title="7. Security">
               <p>
-                Goshen Writing and Consultancies implements reasonable technical and organisational measures to
+                Iknus Consultants implements reasonable technical and organisational measures to
                 protect your personal data against unauthorised access, loss, or disclosure. Specific
                 safeguards include:
               </p>
@@ -203,7 +203,7 @@ export default function PrivacyPolicy() {
             <Section title="8. Your Rights">
               <p>
                 Under the Kenya Data Protection Act, 2019, you have the following rights in relation
-                to your personal data held by Goshen Writing and Consultancies:
+                to your personal data held by Iknus Consultants:
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li><strong className="text-slate-800">Right of access:</strong> To request a copy of the data we hold about you.</li>
@@ -221,7 +221,7 @@ export default function PrivacyPolicy() {
 
             <Section title="9. Changes to This Notice">
               <p>
-                Goshen Writing and Consultancies reserves the right to amend this Privacy Notice at any time.
+                Iknus Consultants reserves the right to amend this Privacy Notice at any time.
                 Any material changes will be reflected on this page with an updated effective date.
                 We encourage you to review this Notice periodically. Your continued use of our website
                 or services after any amendment constitutes acceptance of the updated Notice.

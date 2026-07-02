@@ -134,7 +134,7 @@ export default function Navbar() {
             to="/"
             className="shrink-0 border-2 border-[#0d3d6e] px-3 py-1.5 text-[#0d3d6e] font-black text-base tracking-widest uppercase hover:bg-[#0d3d6e] hover:text-white transition-colors"
           >
-            Goshen
+            Iknus
           </Link>
 
           {/* Nav links */}
