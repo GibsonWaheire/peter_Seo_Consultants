@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
 import Home from './pages/Home'
@@ -20,43 +20,55 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import ScrollToTop from './components/ScrollToTop'
 
+const NO_FOOTER_PATHS = ['/pay']
+
+function AppInner() {
+  const { pathname } = useLocation()
+  const showFooter = !NO_FOOTER_PATHS.includes(pathname)
+  return (
+    <>
+      <ScrollToTop />
+      <Navbar />
+      <Routes>
+        {/* Public */}
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/services/:slug" element={<ServicePage />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/order" element={<OrderPage />} />
+        <Route path="/pay" element={<ClientPayPage />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/refund" element={<RefundPolicy />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* Client protected */}
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } />
+
+        {/* Admin protected */}
+        <Route path="/admin" element={
+          <ProtectedRoute adminOnly>
+            <AdminPanel />
+          </ProtectedRoute>
+        } />
+      </Routes>
+      {showFooter && <Footer />}
+    </>
+  )
+}
+
 function App() {
   return (
     <AuthProvider>
       <Router>
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          {/* Public */}
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServicePage />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/order" element={<OrderPage />} />
-          <Route path="/pay" element={<ClientPayPage />} />
-          <Route path="/terms" element={<TermsOfService />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/refund" element={<RefundPolicy />} />
-          <Route path="/login" element={<Login />} />
-
-          {/* Client protected */}
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          } />
-
-          {/* Admin protected */}
-          <Route path="/admin" element={
-            <ProtectedRoute adminOnly>
-              <AdminPanel />
-            </ProtectedRoute>
-          } />
-        </Routes>
-        <Footer />
+        <AppInner />
       </Router>
     </AuthProvider>
   )

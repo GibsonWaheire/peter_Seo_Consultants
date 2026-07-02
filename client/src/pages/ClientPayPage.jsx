@@ -303,16 +303,10 @@ export default function ClientPayPage() {
     <main className="min-h-screen bg-slate-50 pt-[104px]">
 
       {/* Page header */}
-      <section className="bg-[#0d3d6e] py-14 px-6">
-        <div className="max-w-6xl mx-auto">
-          <span className="text-blue-300 text-xs font-black uppercase tracking-widest">Secure Payment</span>
-          <h1 className="text-4xl md:text-5xl font-black text-white mt-2 leading-tight">
-            Pay for Your<br />
-            <span className="text-emerald-400">SEO Service</span>
-          </h1>
-          <p className="text-blue-200 text-sm mt-4 max-w-md">
-            From KES 1,000 for individual tasks to full monthly retainers. Pay with M-Pesa, card, or Apple Pay.
-          </p>
+      <section className="bg-[#0d3d6e] py-8 px-6">
+        <div className="max-w-lg mx-auto">
+          <h1 className="text-2xl font-black text-white">Secure Payment</h1>
+          <p className="text-blue-300 text-sm mt-1">M-Pesa · Card · Apple Pay</p>
         </div>
       </section>
 
