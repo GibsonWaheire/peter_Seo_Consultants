@@ -3,6 +3,14 @@
   "outputDirectory": "client/dist",
   "installCommand": "echo 'skip root install'",
   "framework": null,
+  "headers": [
+    {
+      "source": "/.well-known/apple-developer-merchantid-domain-association",
+      "headers": [
+        { "key": "Content-Type", "value": "application/text" }
+      ]
+    }
+  ],
   "routes": [
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
